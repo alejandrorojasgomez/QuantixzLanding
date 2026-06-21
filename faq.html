@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>FAQ — Quantixz | Preguntas frecuentes</title>
-<meta name="description" content="Preguntas frecuentes sobre los servicios de branding, contenido y diseño de Quantixz." />
+<title>Preguntas frecuentes — Quantixz</title>
+<meta name="description" content="Preguntas frecuentes sobre los servicios de branding, contenido y diseño de Quantixz Studio." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -18,19 +18,20 @@
     --c-cream-dim:#ffedd9b3;--c-cream-mut:#ffedd966;--c-line:#ffedd91a;
     --font-display:"Axiforma","Archivo",system-ui,sans-serif;
     --font-body:"Axiforma","Archivo",system-ui,sans-serif;
-    --maxw:980px;--gutter:clamp(22px,5vw,80px);--ease:cubic-bezier(.2,.7,.2,1);
+    --maxw:1020px;--gutter:clamp(22px,5vw,80px);--ease:cubic-bezier(.2,.7,.2,1);
   }
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;}
   body{background:var(--c-bg);color:var(--c-cream);font-family:var(--font-body);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
   a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
   ::selection{background:var(--c-accent);color:var(--c-cream);}
   .wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gutter);}
   .display{font-family:var(--font-display);font-weight:900;line-height:1;letter-spacing:-.02em;text-transform:uppercase;}
+  .btn,.ccard,.field input,.field textarea,.budget-row select{border-radius:2px;}
 
-  .cursor-glow{position:fixed;top:0;left:0;width:360px;height:360px;border-radius:50%;pointer-events:none;z-index:9999;transform:translate3d(-50%,-50%,0);mix-blend-mode:screen;opacity:0;transition:opacity .4s;background:radial-gradient(circle,rgba(229,12,51,.24) 0%,rgba(229,12,51,.08) 32%,transparent 60%);filter:blur(8px);}
-  .cursor-dot{position:fixed;top:0;left:0;width:7px;height:7px;border-radius:50%;background:var(--c-accent);pointer-events:none;z-index:10000;transform:translate3d(-50%,-50%,0);box-shadow:0 0 12px 2px rgba(229,12,51,.8);opacity:0;transition:opacity .3s;}
-  @media (hover:none){.cursor-glow,.cursor-dot{display:none;}}
+  .cursor-glow{position:fixed;top:0;left:0;width:360px;height:360px;border-radius:50%;pointer-events:none;z-index:9999;transform:translate3d(-50%,-50%,0);mix-blend-mode:screen;opacity:0;transition:opacity .4s;background:radial-gradient(circle,rgba(229,12,51,.26) 0%,rgba(229,12,51,.09) 32%,transparent 62%);filter:blur(10px);}
+  @media (hover:none){.cursor-glow{display:none;}}
 
   header.site{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:18px var(--gutter);background:rgba(10,0,1,.72);backdrop-filter:blur(12px);border-bottom:1px solid var(--c-line);}
   .brand{display:flex;align-items:center;gap:13px;}
@@ -41,51 +42,115 @@
   .back:hover{color:var(--c-accent);}
 
   .aurora{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;}
-  .blob{position:absolute;border-radius:50%;filter:blur(95px);width:60vw;height:60vw;max-width:740px;max-height:740px;top:-20%;left:-6%;opacity:.4;background:radial-gradient(circle at 40% 40%,var(--c-accent) 0%,rgba(229,12,51,.4) 34%,rgba(58,0,8,0) 70%);}
+  .blob{position:absolute;border-radius:50%;filter:blur(120px);width:58vw;height:58vw;max-width:720px;max-height:720px;top:-16%;left:-4%;opacity:.4;background:radial-gradient(circle at 40% 40%,var(--c-accent) 0%,rgba(229,12,51,.4) 34%,rgba(58,0,8,0) 70%);}
 
-  .hero{position:relative;padding:160px 0 50px;}
+  .eyebrow{font-size:.8rem;letter-spacing:.34em;text-transform:uppercase;color:var(--c-accent);font-weight:600;display:inline-flex;align-items:center;gap:14px;}
+  .eyebrow::before{content:"";width:42px;height:1px;background:var(--c-accent);}
+
+  .hero{position:relative;padding:150px 0 30px;}
   .hero .wrap{position:relative;z-index:2;}
-  .hero .eyebrow{font-size:.8rem;letter-spacing:.34em;text-transform:uppercase;color:var(--c-accent);font-weight:600;display:inline-flex;align-items:center;gap:14px;margin-bottom:22px;}
-  .hero .eyebrow::before{content:"";width:42px;height:1px;background:var(--c-accent);}
-  .hero h1{font-size:clamp(3.4rem,15vw,9rem);}
-  .hero h1 .accent{color:var(--c-accent);}
-  .hero p.sub{color:var(--c-cream-dim);max-width:48ch;margin-top:22px;font-size:1.08rem;}
+  .hero .eyebrow{margin-bottom:22px;}
+  .hero h1{font-size:clamp(2.6rem,8vw,5.4rem);}
+  .hero .subtitle{font-family:var(--font-display);font-weight:700;text-transform:none;letter-spacing:-.01em;font-size:clamp(1.3rem,2.8vw,2rem);line-height:1.3;margin-top:22px;max-width:24ch;}
+  .hero .intro{color:var(--c-cream-dim);max-width:68ch;margin-top:18px;font-size:1.05rem;}
 
-  .faqs{position:relative;padding:30px 0 clamp(90px,14vh,160px);}
-  .faqitem{border-bottom:1px solid var(--c-line);}
-  .faqitem button.q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;text-align:left;background:none;border:none;cursor:pointer;color:var(--c-cream);font-family:var(--font-display);font-weight:700;text-transform:none;letter-spacing:-.01em;font-size:clamp(1.15rem,2.6vw,1.7rem);padding:clamp(22px,3vw,30px) 0;transition:color .3s,padding-left .35s var(--ease);}
-  .faqitem button.q:hover{color:var(--c-accent);padding-left:10px;}
+  .faqs{position:relative;padding:34px 0 clamp(70px,10vh,120px);}
+  .faqs .wrap{counter-reset:faq;}
+  .faqitem{border:2px solid var(--c-line);background:#ffedd905;margin-bottom:16px;position:relative;overflow:hidden;transition:transform .3s var(--ease),border-color .3s,box-shadow .3s,background .3s;}
+  .faqitem::after{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--c-accent);transform:scaleY(0);transform-origin:top;transition:transform .35s var(--ease);}
+  .faqitem:hover,.faqitem.open{border-color:var(--c-accent);transform:translate(-3px,-3px);box-shadow:8px 8px 0 var(--c-accent);background:#ffedd90a;}
+  .faqitem:hover::after,.faqitem.open::after{transform:scaleY(1);}
+  .faqitem button.q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;text-align:left;background:none;border:none;cursor:pointer;color:var(--c-cream);font-family:var(--font-display);font-weight:700;text-transform:none;letter-spacing:-.01em;font-size:clamp(1.1rem,2.4vw,1.55rem);padding:clamp(18px,3vw,26px) clamp(18px,3vw,28px);transition:color .3s;}
+  .faqitem button.q::before{counter-increment:faq;content:counter(faq,decimal-leading-zero);font-family:var(--font-display);font-weight:900;color:var(--c-accent);font-size:.85rem;letter-spacing:.1em;border:2px solid var(--c-accent);padding:4px 8px;flex-shrink:0;align-self:flex-start;margin-top:2px;}
+  .faqitem button.q:hover{color:var(--c-accent);}
+  .faqitem button.q>span:first-of-type{flex:1;}
   .faqitem .q .qmark{color:var(--c-accent);}
-  .faqitem .plus{flex-shrink:0;width:26px;height:26px;position:relative;}
+  .faqitem .plus{flex-shrink:0;width:24px;height:24px;position:relative;}
   .faqitem .plus::before,.faqitem .plus::after{content:"";position:absolute;background:var(--c-accent);transition:transform .35s var(--ease),opacity .35s;}
   .faqitem .plus::before{top:50%;left:0;right:0;height:2px;transform:translateY(-50%);}
   .faqitem .plus::after{left:50%;top:0;bottom:0;width:2px;transform:translateX(-50%);}
   .faqitem.open .plus::after{transform:translateX(-50%) scaleY(0);}
   .faqitem .a{overflow:hidden;max-height:0;transition:max-height .45s var(--ease),opacity .4s;opacity:0;}
   .faqitem.open .a{opacity:1;}
-  .faqitem .a p{color:var(--c-cream-dim);font-size:1.05rem;padding:0 0 clamp(22px,3vw,30px);max-width:70ch;}
+  .faqitem .a p{color:var(--c-cream-dim);font-size:1.04rem;padding:0 clamp(18px,3vw,28px) clamp(20px,3vw,28px);max-width:80ch;border-top:1px dashed var(--c-line);padding-top:18px;}
 
-  .faq-cta{margin-top:clamp(50px,7vw,80px);border:1px solid var(--c-line);padding:clamp(30px,4vw,48px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;background:linear-gradient(140deg,rgba(229,12,51,.12),#ffedd905);}
-  .faq-cta h3{font-family:var(--font-display);font-weight:900;text-transform:uppercase;font-size:clamp(1.4rem,3vw,2.1rem);line-height:1.05;max-width:18ch;}
-  .btn{display:inline-flex;align-items:center;gap:11px;font-size:.9rem;font-weight:600;padding:15px 28px;background:var(--c-accent);color:var(--c-cream);border:1px solid var(--c-accent);transition:transform .3s var(--ease),box-shadow .3s;}
-  .btn:hover{transform:translateY(-3px);box-shadow:0 14px 30px -10px rgba(229,12,51,.6);}
-  .btn .arrow{transition:transform .3s var(--ease);} .btn:hover .arrow{transform:translateX(4px);}
+  /* SEPARADOR ligero */
+  .sep{position:relative;height:0;display:flex;justify-content:center;}
+  .sep span{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(620px,80vw);height:1px;background:rgba(255,237,217,.22);}
 
-  footer{border-top:1px solid var(--c-line);padding:30px 0;}
-  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:center;}
-  footer small{color:var(--c-cream-mut);font-size:.76rem;}
+  /* ===== HABLEMOS (reciclado del inicio) ===== */
+  .btn{display:inline-flex;align-items:center;gap:11px;font-size:.9rem;letter-spacing:.02em;font-weight:600;padding:15px 28px;border:1px solid var(--c-accent);font-family:var(--font-display);transition:transform .3s var(--ease),background .3s,box-shadow .3s;cursor:pointer;}
+  .btn--primary{background:var(--c-accent);color:var(--c-cream);}
+  .btn--primary:hover{transform:translateY(-3px);box-shadow:0 14px 30px -10px rgba(229,12,51,.6);}
+  .btn .arrow{transition:transform .3s var(--ease);}
+  .btn:hover .arrow{transform:translateX(4px);}
 
-  .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease);}
-  .reveal.in{opacity:1;transform:none;}
-  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}.cursor-glow,.cursor-dot{display:none;}*,*::before,*::after{transition-duration:.001ms!important;}}
+  .contact{padding:clamp(70px,10vh,120px) 0 60px;position:relative;}
+  .contact .eyebrow{display:inline-flex;margin-bottom:30px;}
+  .contact h2{font-size:clamp(2.6rem,9vw,6rem);line-height:.95;margin-bottom:.16em;}
+  .contact h2 .accent{color:var(--c-accent);}
+  .contact__sub{font-size:clamp(1.05rem,1.8vw,1.3rem);color:var(--c-cream-dim);max-width:50ch;margin-bottom:clamp(36px,5vw,54px);}
+  .contact__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,5vw,64px);align-items:stretch;}
+  @media (max-width:880px){.contact__grid{grid-template-columns:1fr;}}
+
+  form.cform{display:flex;flex-direction:column;gap:clamp(24px,4vw,38px);}
+  .cfields{display:flex;flex-direction:column;gap:18px;}
+  .field--msg{flex:1;display:flex;flex-direction:column;}
+  .field--msg textarea{flex:1;}
+  .field label{display:block;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--c-cream-mut);margin-bottom:9px;}
+  .field input,.field textarea{width:100%;background:transparent;border:1px solid var(--c-line);color:var(--c-cream);font-family:var(--font-body);font-size:1rem;padding:15px 16px;transition:border-color .3s,background .3s;}
+  .field textarea{resize:vertical;min-height:130px;}
+  .field input:focus,.field textarea:focus{outline:none;border-color:var(--c-accent);background:#ffedd905;}
+  .field input::placeholder,.field textarea::placeholder{color:var(--c-cream-mut);}
+  .budget-row{display:flex;gap:10px;}
+  .budget-row input{flex:1;min-width:0;}
+  .budget-row select{background:rgba(229,12,51,.12);border:1px solid var(--c-accent);color:var(--c-accent);font-family:var(--font-display);font-weight:700;font-size:1rem;padding:15px 14px;cursor:pointer;min-width:96px;transition:border-color .3s,background .3s;}
+  .budget-row select:hover{background:rgba(229,12,51,.2);}
+  .budget-row select:focus{outline:none;border-color:var(--c-accent);background:rgba(229,12,51,.2);}
+  .budget-row select option{background:var(--c-black);color:var(--c-cream);}
+  .form-actions{position:relative;}
+  .form-actions button{cursor:pointer;width:100%;justify-content:center;}
+  .form-status{position:absolute;left:0;top:calc(100% + 10px);font-size:.9rem;color:var(--c-accent);}
+
+  .contact__side{display:flex;flex-direction:column;gap:18px;justify-content:space-between;}
+  .ccard{border:1px solid var(--c-line);padding:24px;transition:border-color .35s,transform .35s var(--ease),background .35s;}
+  .ccard:hover{border-color:var(--c-accent);transform:translateY(-4px);background:#ffedd905;}
+  .ccard .ck{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--c-cream-mut);margin-bottom:10px;display:flex;align-items:center;gap:9px;}
+  .ccard .ck svg{width:16px;height:16px;color:var(--c-accent);}
+  .ccard a.cv,.ccard .cv{font-family:var(--font-display);font-weight:700;font-size:1.15rem;color:var(--c-cream);display:inline-flex;align-items:center;gap:9px;}
+  .ccard:hover a.cv{color:var(--c-accent);}
+  .ccard.calendly{background:linear-gradient(140deg,rgba(229,12,51,.14),#ffedd905);border-color:rgba(229,12,51,.35);}
+  .ccard.calendly p{color:var(--c-cream-dim);font-size:.95rem;margin:6px 0 18px;}
+  .ccard.calendly h3{font-family:var(--font-display);font-weight:900;text-transform:uppercase;font-size:1.3rem;line-height:1.1;}
+  .clinks{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px;}
+  .clinks a{font-size:.88rem;color:var(--c-cream-dim);border-bottom:1px solid transparent;padding-bottom:2px;transition:color .25s,border-color .25s;}
+  .clinks a:hover{color:var(--c-accent);border-color:var(--c-accent);}
+  @media (max-width:880px){.contact__side{justify-content:flex-start;}}
+
+  /* FOOTER */
+  .site-footer{position:relative;margin-top:clamp(50px,8vw,90px);border-top:2px solid var(--c-accent);background:#100207;}
+  .footer-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px 28px;padding-block:clamp(28px,4vw,42px);}
+  .footer-bar .brand img{width:30px;}
+  .footer-links{display:flex;flex-wrap:wrap;gap:12px 26px;}
+  .footer-links a{font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;color:var(--c-cream);transition:color .25s;}
+  .footer-links a:hover{color:var(--c-accent);}
+  .footer-bar small{color:var(--c-cream-dim);font-size:.78rem;letter-spacing:.06em;}
+
+  .reveal{opacity:0;transform:translateY(30px);filter:blur(6px);transition:opacity .85s var(--ease),transform .85s var(--ease),filter .85s var(--ease);}
+  .reveal.in{opacity:1;transform:none;filter:blur(0);}
+  @media (max-width:600px){.reveal{filter:none;}}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;filter:none;transition:none;}.cursor-glow{display:none;}*,*::before,*::after{transition-duration:.001ms!important;}}
+
+  .wa-float{position:fixed;right:22px;bottom:22px;width:56px;height:56px;border-radius:50%;background:var(--c-accent);display:flex;align-items:center;justify-content:center;z-index:55;box-shadow:0 10px 30px -8px rgba(229,12,51,.6);transition:transform .35s var(--ease);}
+  .wa-float:hover{transform:scale(1.1) translateY(-2px);}
+  .wa-float svg{width:28px;height:28px;color:var(--c-cream);}
 </style>
 </head>
 <body>
 <div class="cursor-glow" aria-hidden="true"></div>
-<div class="cursor-dot" aria-hidden="true"></div>
 
 <header class="site">
-  <a class="brand" href="./index.html" aria-label="Quantixz — inicio"><img src="./blanco.svg" alt="Logo Quantixz" /><b>Quantixz</b></a>
+  <a class="brand" href="./index.html" aria-label="Quantixz, inicio"><img src="./blanco.svg" alt="Logo Quantixz" /><b>Quantixz</b></a>
   <a class="back" href="./index.html">&larr; Volver al inicio</a>
 </header>
 
@@ -93,8 +158,10 @@
   <div class="aurora"><div class="blob"></div></div>
   <div class="wrap">
     <span class="eyebrow">Preguntas frecuentes</span>
-    <h1 class="display">FAQ<span class="accent">'s</span></h1>
-    <p class="sub">Lo que casi siempre nos preguntan. &iquest;No ves tu duda? Escr&iacute;benos, con gusto te atendemos.</p>
+    <h1 class="display">Preguntas<br>frecuentes</h1>
+    <p class="subtitle">Resolvemos tus dudas para que des el paso con total seguridad.</p>
+    <p class="intro">Detr&aacute;s de cada marca exitosa hay una estrategia clara y un equipo comprometido. En Quantixz Studio queremos ser ese aliado creativo que te acompa&ntilde;e a estructurar, dise&ntilde;ar y potenciar tu negocio.</p>
+    <p class="intro">Entendemos que cada proyecto es un universo distinto y que puedes tener inquietudes sobre c&oacute;mo trabajamos. Aqu&iacute; hemos recopilado las respuestas a las preguntas m&aacute;s frecuentes de nuestros clientes para que tengas toda la informaci&oacute;n sobre la mesa, sin letras peque&ntilde;as. &iexcl;L&eacute;elas y descubre por qu&eacute; somos tu mejor opci&oacute;n!</p>
   </div>
 </section>
 
@@ -102,28 +169,87 @@
   <div class="wrap" id="faqList"></div>
 </section>
 
-<footer>
+<div class="sep" aria-hidden="true"><span></span></div>
+
+<!-- HABLEMOS (reciclado del inicio) -->
+<section class="contact" id="contact">
   <div class="wrap">
-    <a class="brand" href="./index.html"><img src="./blanco.svg" alt="" style="width:28px"/><b>Quantixz</b></a>
+    <span class="eyebrow reveal">&iquest;Construimos tu marca?</span>
+    <h2 class="display reveal">Hablemos<span class="accent">.</span></h2>
+    <p class="contact__sub reveal">&iquest;Est&aacute;s listo para contar tu historia como realmente se merece? Escr&iacute;benos y empecemos.</p>
+
+    <form class="cform reveal" action="https://api.web3forms.com/submit" method="POST" id="contactForm">
+      <input type="hidden" name="access_key" value="45dcf393-fa2d-4f63-a72a-01a0e1ee9e70">
+      <input type="hidden" name="subject" value="Nuevo mensaje desde quantixz.com (FAQ)">
+      <input type="hidden" name="from_name" value="Web Quantixz">
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+      <div class="contact__grid">
+        <div class="cfields">
+          <div class="field"><label for="cf-name">Nombre</label><input id="cf-name" type="text" name="name" placeholder="Tu nombre" required></div>
+          <div class="field"><label for="cf-email">Correo</label><input id="cf-email" type="email" name="email" placeholder="tucorreo@ejemplo.com" required></div>
+          <div class="field"><label for="cf-budget">Presupuesto (opcional)</label>
+            <div class="budget-row">
+              <input id="cf-budget" type="text" inputmode="numeric" name="presupuesto" placeholder="Tu presupuesto estimado">
+              <select name="moneda" aria-label="Moneda"><option value="COP">COP</option><option value="USD">USD</option></select>
+            </div>
+          </div>
+          <div class="field field--msg"><label for="cf-msg">Cu&eacute;ntanos de tu proyecto</label><textarea id="cf-msg" name="message" placeholder="¿Qué necesitas? Marca, packaging, contenido, web..." required></textarea></div>
+        </div>
+
+        <div class="contact__side">
+        <div class="ccard calendly reveal">
+          <h3>Agenda una llamada</h3>
+          <p>30 minutos, sin compromiso, para entender tu marca y trazar el siguiente paso juntos.</p>
+          <a class="btn btn--primary" href="https://calendly.com/quantixz-contact/discover?utm_source=ig&utm_medium=social&utm_content=link_in_bio&utm_id=97760_v0_s00_e0_tv3" target="_blank" rel="noopener">Reservar en Calendly <span class="arrow">&rarr;</span></a>
+        </div>
+        <a class="ccard reveal" href="https://wa.me/573156057195" target="_blank" rel="noopener">
+          <span class="ck"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.74-.86-2-.95-.27-.1-.46-.15-.66.15-.2.3-.76.95-.93 1.14-.17.2-.34.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.34.44-.51.15-.17.2-.3.3-.49.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.91-2.18-.24-.57-.48-.5-.66-.5-.17 0-.37-.03-.56-.03-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.87 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.74-.71 1.99-1.4.24-.69.24-1.28.17-1.4-.07-.12-.27-.2-.56-.34M12.04 21.5h-.01a9.45 9.45 0 0 1-4.83-1.32l-.35-.2-3.59.94.96-3.5-.23-.36a9.46 9.46 0 0 1-1.45-5.03c0-5.22 4.25-9.47 9.48-9.47 2.53 0 4.91.99 6.7 2.78a9.42 9.42 0 0 1 2.77 6.7c0 5.22-4.25 9.47-9.47 9.47M20.52 3.49A11.8 11.8 0 0 0 12.04 0C5.46 0 .1 5.35.1 11.93c0 2.1.55 4.16 1.6 5.97L0 24l6.3-1.65a11.9 11.9 0 0 0 5.73 1.46h.01c6.58 0 11.94-5.35 11.94-11.93a11.86 11.86 0 0 0-3.46-8.39"/></svg> WhatsApp</span>
+          <span class="cv">Escr&iacute;benos por WhatsApp <span class="arrow">&rarr;</span></span>
+        </a>
+        <div class="ccard reveal">
+          <span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"/></svg> Redes &amp; portafolio</span>
+          <div class="clinks">
+            <a href="https://instagram.com/quantixzstudio" target="_blank" rel="noopener">Instagram &#8599;</a>
+            <a href="https://www.linkedin.com/in/alejandro-rojas-gomez-7614612b0/?locale=es" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+            <a href="https://www.behance.net/" target="_blank" rel="noopener">Behance &#8599;</a>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="form-actions">
+        <button class="btn btn--primary" type="submit">Enviar mensaje <span class="arrow">&rarr;</span></button>
+        <p class="form-status" id="formStatus" role="status"></p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-bar">
+    <a class="brand" href="./index.html" aria-label="Quantixz, inicio"><img src="./blanco.svg" alt="Logo Quantixz" /><b>Quantixz</b></a>
+    <nav class="footer-links">
+      <a href="./index.html">Inicio</a>
+      <a href="./terminos-y-condiciones.html">T&eacute;rminos y condiciones</a>
+    </nav>
     <small>&copy; <span id="year"></span> Quantixz · Alejandro Rojas G&oacute;mez</small>
   </div>
 </footer>
 
+<a class="wa-float" href="https://wa.me/573156057195" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.74-.86-2-.95-.27-.1-.46-.15-.66.15-.2.3-.76.95-.93 1.14-.17.2-.34.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.34.44-.51.15-.17.2-.3.3-.49.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.91-2.18-.24-.57-.48-.5-.66-.5-.17 0-.37-.03-.56-.03-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.87 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.74-.71 1.99-1.4.24-.69.24-1.28.17-1.4-.07-.12-.27-.2-.56-.34M12.04 21.5h-.01a9.45 9.45 0 0 1-4.83-1.32l-.35-.2-3.59.94.96-3.5-.23-.36a9.46 9.46 0 0 1-1.45-5.03c0-5.22 4.25-9.47 9.48-9.47 2.53 0 4.91.99 6.7 2.78a9.42 9.42 0 0 1 2.77 6.7c0 5.22-4.25 9.47-9.47 9.47M20.52 3.49A11.8 11.8 0 0 0 12.04 0C5.46 0 .1 5.35.1 11.93c0 2.1.55 4.16 1.6 5.97L0 24l6.3-1.65a11.9 11.9 0 0 0 5.73 1.46h.01c6.58 0 11.94-5.35 11.94-11.93a11.86 11.86 0 0 0-3.46-8.39"/></svg></a>
+
 <script>
   const FAQS=[
-    {q:"¿Dónde se realizarían las sesiones fotográficas?",a:"Las sesiones se realizan en tus establecimientos o en un lugar específico que acordemos contigo según el proyecto."},
-    {q:"¿Qué pasa si quiero ajustar los servicios de un plan?",a:"Todo es personalizable. Adaptamos las características a tus necesidades específicas, con su respectivo ajuste en el precio y los servicios ofrecidos."},
-    {q:"¿Cómo se arma el presupuesto?",a:"Cada presupuesto se construye a tu medida. No vendemos paquetes rígidos: definimos juntos el alcance y armamos una propuesta que se ajuste a tus posibilidades sin sacrificar calidad."},
-    {q:"¿Qué incluye la asesoría?",a:"Orientación en estrategias de contenido, diseño o publicidad. En planes avanzados incluye análisis detallado de campañas publicitarias."},
-    {q:"¿Cómo se planifica el contenido mensual?",a:"Trabajamos contigo para identificar tus objetivos, eventos clave y celebraciones relevantes para tu marca. Te entregamos un calendario con la programación del contenido."},
-    {q:"¿Quién elige los temas o el enfoque del contenido?",a:"Puedes sugerir ideas o dejar que nuestro equipo creativo proponga estrategias alineadas con tu marca."},
-    {q:"¿Los precios incluyen la pauta publicitaria?",a:"No. Los precios son exclusivamente por la creación y planificación de contenido, pero te asesoramos en cómo gestionar tu presupuesto publicitario."},
-    {q:"¿Ofrecen facilidades de pago?",a:"Sí. Manejamos planes de pago accesibles para que puedas invertir en una identidad de alto impacto sin agotar tus recursos."},
-    {q:"¿Cómo puedo hacer consultas adicionales fuera de la asesoría?",a:"Puedes escribirnos por chat en cualquier momento para resolver dudas o solicitar ajustes menores en el contenido."}
+    {q:`¿Manejan paquetes o planes fijos de diseño?`,a:`Cada marca es un universo distinto con necesidades únicas. Por eso, no trabajamos con planes genéricos, sino mediante cotizaciones 100% personalizadas. Analizamos a fondo el alcance de tu proyecto, tu mercado y tus objetivos para armar una propuesta a la medida que realmente funcione como una inversión estratégica para tu negocio.`},
+    {q:`¿Ofrecen asesoría si aún no tengo clara la idea de mi negocio?`,a:`¡Totalmente! Sabemos que para destacar no basta con un diseño bonito; se necesita estrategia. Por eso, te ofrecemos una sesión guiada de brainstorming donde trabajaremos de la mano. Te ayudaremos a "cranear" y estructurar bien tu modelo de negocio desde la raíz, garantizando que este vaya perfectamente vinculado a una identidad visual espectacularmente creada y diseñada para conectar con tus clientes. ¡Nosotros te guiamos en todo el proceso!`},
+    {q:`¿Cuánto tiempo tarda el desarrollo de un proyecto?`,a:`Los tiempos varían según la complejidad de tu cotización personalizada. Sin embargo, el cronograma oficial de días hábiles comienza a correr únicamente cuando hemos recibido el abono inicial y nos has entregado toda la información necesaria (como el Blueprint Creativo).`},
+    {q:`¿Qué pasa si quiero hacer cambios al diseño propuesto?`,a:`¡Queremos que ames el resultado final! Todo proyecto incluye hasta tres (3) sesiones de cambios sin costo alguno. Para optimizar tu tiempo y hacer este proceso súper ágil, programamos una llamada o videollamada contigo donde revisaremos la propuesta y definiremos los ajustes necesarios con total claridad.`},
+    {q:`¿Me entregan los archivos editables originales al finalizar?`,a:`Sí, los archivos fuente originales (.AI, .PSD, .Figma, etc.) están incluidos en tu proyecto sin ningún costo adicional. El único requisito es que debes solicitarlos con anterioridad a la fecha de entrega final. De esta manera, nuestro equipo podrá organizar, limpiar las capas y preparar los archivos para dejártelos impecables.`},
+    {q:`¿Cuáles son los métodos y condiciones de pago?`,a:`Para arrancar a darle vida a tu proyecto, solicitamos un abono inicial acordado (generalmente entre el 30% y 50%). Ten en cuenta que los proyectos de $250.000 COP o menos se pagan en su totalidad al inicio. Para tu comodidad, aceptamos pagos por PayPal, Zelle, transferencias internacionales, Nequi, Bancolombia, Movii y Banco Itaú.`},
+    {q:`¿Cómo puedo comunicarme con ustedes si tengo más dudas?`,a:`Estamos aquí para resolver cualquier inquietud antes, durante y después del proyecto. Puedes escribirnos cualquier duda directamente a nuestro correo electrónico o a nuestro WhatsApp. Responderemos cuanto antes para ayudarte a dar el siguiente paso.`}
   ];
   (function(){
     const wrap=document.getElementById("faqList");
-    FAQS.forEach((f,i)=>{
+    FAQS.forEach((f)=>{
       const item=document.createElement("div");
       item.className="faqitem reveal";
       const qHtml=f.q.replace(/^¿/,'<span class="qmark">¿</span>').replace(/\?$/,'<span class="qmark">?</span>');
@@ -137,28 +263,32 @@
       });
       wrap.appendChild(item);
     });
-    // reveal
-    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}}),{threshold:.1});
-    document.querySelectorAll(".reveal").forEach(n=>io.observe(n));
   })();
-
-  // CTA al final
-  const wrap=document.getElementById("faqList");
-  const cta=document.createElement("div");
-  cta.className="faq-cta reveal";
-  cta.innerHTML='<h3>¿Otra duda? Con gusto te atendemos.</h3><a class="btn" href="./index.html#contact">Hablemos <span class="arrow">&rarr;</span></a>';
-  wrap.appendChild(cta);
 
   document.getElementById("year").textContent=new Date().getFullYear();
 
-  // cursor glow
+  /* REVEAL */
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}}),{threshold:.12,rootMargin:"0px 0px -7% 0px"});
+  document.querySelectorAll(".reveal").forEach(n=>io.observe(n));
+
+  /* CURSOR halo */
   const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
   if(!reduce && matchMedia("(hover:hover)").matches){
-    const glow=document.querySelector(".cursor-glow"),dot=document.querySelector(".cursor-dot");
+    const glow=document.querySelector(".cursor-glow");
     let gx=innerWidth/2,gy=innerHeight/2,tx=gx,ty=gy;
-    addEventListener("mousemove",e=>{tx=e.clientX;ty=e.clientY;dot.style.left=e.clientX+"px";dot.style.top=e.clientY+"px";glow.style.opacity="1";dot.style.opacity="1";},{passive:true});
+    addEventListener("mousemove",e=>{tx=e.clientX;ty=e.clientY;glow.style.opacity="1";},{passive:true});
     (function loop(){gx+=(tx-gx)*.14;gy+=(ty-gy)*.14;glow.style.left=gx+"px";glow.style.top=gy+"px";requestAnimationFrame(loop);})();
   }
+
+  /* FORM Web3Forms */
+  const form=document.getElementById("contactForm"),status=document.getElementById("formStatus");
+  if(form){form.addEventListener("submit",async e=>{
+    e.preventDefault();status.style.color="var(--c-cream-mut)";status.textContent="Enviando...";
+    try{const res=await fetch(form.action,{method:"POST",body:new FormData(form),headers:{Accept:"application/json"}});const data=await res.json();
+      if(data.success){status.style.color="var(--c-accent)";status.textContent="¡Gracias! Te responderemos pronto.";form.reset();}
+      else{status.style.color="var(--c-accent)";status.textContent=data.message||"Algo falló. Escríbenos por WhatsApp.";}
+    }catch(err){status.style.color="var(--c-accent)";status.textContent="Error de conexión. Escríbenos por WhatsApp.";}
+  });}
 </script>
 </body>
 </html>

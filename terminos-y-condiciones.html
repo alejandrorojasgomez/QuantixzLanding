@@ -52,9 +52,12 @@
   /* PLACEHOLDER: estilo de bloques editables */
   .tpl{border:1px dashed var(--c-line);background:#ffedd905;padding:14px 18px;margin:0 0 30px;color:var(--c-cream-mut);font-size:.86rem;letter-spacing:.02em;border-radius:2px;}
   .tpl b{color:var(--c-accent);}
-  section.clause{margin-bottom:36px;}
-  section.clause h2{font-family:var(--font-display);font-weight:700;text-transform:none;letter-spacing:-.01em;font-size:clamp(1.3rem,3vw,1.8rem);margin-bottom:12px;}
-  section.clause h2 .n{color:var(--c-accent);margin-right:10px;}
+  section.clause{margin-bottom:24px;border:2px solid var(--c-line);background:#ffedd905;padding:clamp(22px,3vw,34px);position:relative;overflow:hidden;transition:transform .3s var(--ease),border-color .3s,box-shadow .3s,background .3s;border-radius:2px;}
+  section.clause::before{content:"";position:absolute;left:0;top:0;width:6px;height:100%;background:var(--c-accent);opacity:.45;transition:opacity .3s;}
+  section.clause:hover{border-color:var(--c-accent);transform:translate(-3px,-3px);box-shadow:8px 8px 0 var(--c-accent);background:#ffedd90a;}
+  section.clause:hover::before{opacity:1;}
+  section.clause h2{display:flex;align-items:center;gap:14px;font-family:var(--font-display);font-weight:700;text-transform:none;letter-spacing:-.01em;font-size:clamp(1.3rem,3vw,1.8rem);margin-bottom:14px;}
+  section.clause h2 .n{display:inline-flex;align-items:center;justify-content:center;color:var(--c-accent);background:rgba(229,12,51,.1);border:2px solid var(--c-accent);font-weight:900;font-size:.9rem;letter-spacing:.06em;padding:4px 9px;margin-right:0;flex-shrink:0;border-radius:2px;}
   section.clause p,section.clause li{color:var(--c-cream-dim);font-size:1.02rem;}
   section.clause ul{margin:10px 0 0 18px;display:flex;flex-direction:column;gap:6px;}
   .placeholder{color:var(--c-cream-mut);font-style:italic;border-left:2px solid var(--c-accent);padding-left:14px;}
@@ -79,73 +82,52 @@
     <span class="eyebrow">Legal</span>
     <h1 class="display">T&eacute;rminos y<br>Condiciones</h1>
     <p class="sub">Estas condiciones regulan la prestaci&oacute;n de los servicios de dise&ntilde;o y branding de Quantixz.</p>
-    <p class="updated">&Uacute;ltima actualizaci&oacute;n: [PENDIENTE: fecha]</p>
+    <p class="updated">&Uacute;ltima actualizaci&oacute;n: junio de 2026</p>
   </div>
 </section>
 
 <div class="doc">
   <div class="wrap">
 
-    <!-- ====================================================================
-         PLANTILLA T&C — Alejandro: reemplaza cada bloque [PENDIENTE] con tu
-         texto final. Puedes añadir, quitar o reordenar las <section class="clause">.
-         Cada cláusula es: <h2><span class="n">01</span> Título</h2> + contenido.
-         ==================================================================== -->
-    <div class="tpl"><b>Plantilla.</b> Estructura lista; pega aqu&iacute; el texto real de cada cl&aacute;usula. Las marcas <b>[PENDIENTE]</b> indican lo que falta completar.</div>
-
     <section class="clause">
-      <h2><span class="n">01</span>Identificaci&oacute;n</h2>
-      <p class="placeholder">[PENDIENTE: nombre/razón social, NIT o documento, ciudad y datos de contacto de Quantixz.]</p>
+      <h2><span class="n">01</span>Condiciones de pago y facturaci&oacute;n</h2>
+      <p>Para dar inicio a cualquier proyecto, se requiere el pago de un abono previo acordado entre ambas partes (generalmente entre el 30% y el 50% del presupuesto total).</p>
+      <p>Los servicios con un valor igual o inferior a $250.000 COP deben ser pagados en su totalidad (100%) antes de iniciar el desarrollo del proyecto.</p>
+      <p>El saldo total restante deber&aacute; ser cancelado antes de la entrega final de los archivos en alta calidad y de su respectiva liberaci&oacute;n para medios digitales o impresi&oacute;n.</p>
+      <p>Para los paquetes de servicios bajo la modalidad de mensualidad, el pago total debe realizarse el primer d&iacute;a del mes contratado.</p>
     </section>
 
     <section class="clause">
-      <h2><span class="n">02</span>Servicios</h2>
-      <p class="placeholder">[PENDIENTE: descripción de los servicios — branding, identidad visual, packaging, contenido, web, e-sport, etc. y qué incluye/no incluye cada cotización.]</p>
+      <h2><span class="n">02</span>Plazos de desarrollo y abandono de proyecto</h2>
+      <p>El tiempo de desarrollo estipulado comenzar&aacute; a regir &uacute;nicamente cuando Quantixz haya recibido el pago inicial, as&iacute; como la totalidad de los materiales y la informaci&oacute;n requerida. Los plazos de entrega se contabilizan exclusivamente en d&iacute;as h&aacute;biles.</p>
+      <p>En caso de que transcurran sesenta (60) d&iacute;as calendario sin recibir respuesta, retroalimentaci&oacute;n o comunicaci&oacute;n oficial por parte del cliente, el proyecto se considerar&aacute; en estado de abandono y se dar&aacute; por finalizado de manera definitiva. Esta medida es estrictamente necesaria para garantizar el flujo de trabajo del estudio y evitar el estancamiento de la agenda, por lo que no habr&aacute; lugar a reactivaciones sin costo, ni a reembolsos por concepto alguno.</p>
     </section>
 
     <section class="clause">
-      <h2><span class="n">03</span>Cotizaciones y precios</h2>
-      <p class="placeholder">[PENDIENTE: cómo se arma el presupuesto personalizado, vigencia de la cotización, moneda, impuestos.]</p>
+      <h2><span class="n">03</span>Rondas de revisi&oacute;n y cambios</h2>
+      <p>Salvo que la cotizaci&oacute;n especifique lo contrario, todo proyecto incluye hasta tres (3) sesiones de cambios sin costo alguno sobre la propuesta presentada.</p>
+      <p>Para optimizar el tiempo, evitar reprocesos y garantizar la m&aacute;xima claridad, el levantamiento de estos ajustes se realizar&aacute; preferiblemente mediante una llamada o videollamada.</p>
+      <p>Cualquier modificaci&oacute;n estructural profunda, redise&ntilde;o tras una aprobaci&oacute;n previa, o sesi&oacute;n adicional de ajustes fuera de las tres iniciales, ser&aacute; cotizada y facturada por separado.</p>
     </section>
 
     <section class="clause">
-      <h2><span class="n">04</span>Forma de pago</h2>
-      <p class="placeholder">[PENDIENTE: anticipo, saldos, métodos de pago, planes de financiación, mora.]</p>
+      <h2><span class="n">04</span>Entregables y propiedad intelectual</h2>
+      <p>La propiedad intelectual y la capacidad de uso ilimitado de la imagen o dise&ntilde;o final pasan a ser del cliente una vez se haya completado el 100% del pago del servicio.</p>
+      <p><strong>Archivos fuente:</strong> los archivos editables originales (.AI, .PSD, etc.) est&aacute;n incluidos en el servicio sin ning&uacute;n costo adicional. Sin embargo, para garantizar su correcta organizaci&oacute;n, limpieza de capas y preparaci&oacute;n, el cliente debe solicitarlos expl&iacute;citamente con anterioridad a la fecha de entrega final.</p>
+      <p>Todos los bocetos, conceptos e ideas preliminares que no formen parte del dise&ntilde;o final seleccionado seguir&aacute;n siendo propiedad intelectual exclusiva de Quantixz Studio.</p>
+      <p>Quantixz retiene el derecho de incluir los dise&ntilde;os finales en sus materiales de difusi&oacute;n, redes sociales y portafolio p&uacute;blico.</p>
     </section>
 
     <section class="clause">
-      <h2><span class="n">05</span>Tiempos de entrega y revisiones</h2>
-      <p class="placeholder">[PENDIENTE: plazos estimados, número de rondas de cambios incluidas, costo de revisiones adicionales.]</p>
+      <h2><span class="n">05</span>Pol&iacute;tica de reembolsos</h2>
+      <p>El abono inicial acordado para arrancar el proyecto no es reembolsable en caso de cancelaci&oacute;n una vez iniciado el desarrollo, ya que este monto cubre el tiempo de investigaci&oacute;n, la reserva de la agenda y la fase inicial de conceptualizaci&oacute;n.</p>
+      <p>En los casos donde el cliente haya realizado el pago de la totalidad (100%) del proyecto por adelantado, pero decida no continuar o no finalizar el servicio tras haber iniciado el trabajo, se evaluar&aacute; el progreso alcanzado y se realizar&aacute; un reembolso equivalente a un m&aacute;ximo del 50% del valor total pagado.</p>
     </section>
 
     <section class="clause">
-      <h2><span class="n">06</span>Propiedad intelectual y derechos de uso</h2>
-      <p class="placeholder">[PENDIENTE: cesión de derechos al cliente tras el pago, derecho de Quantixz a mostrar el trabajo en portafolio.]</p>
-    </section>
-
-    <section class="clause">
-      <h2><span class="n">07</span>Cancelaciones y reembolsos</h2>
-      <p class="placeholder">[PENDIENTE: condiciones de cancelación por cualquiera de las partes y política de reembolso del anticipo.]</p>
-    </section>
-
-    <section class="clause">
-      <h2><span class="n">08</span>Confidencialidad</h2>
-      <p class="placeholder">[PENDIENTE: manejo de la información que comparta el cliente.]</p>
-    </section>
-
-    <section class="clause">
-      <h2><span class="n">09</span>Sesiones fotográficas</h2>
-      <p class="placeholder">[PENDIENTE: dónde se realizan, logística, responsabilidades.]</p>
-    </section>
-
-    <section class="clause">
-      <h2><span class="n">10</span>Datos personales</h2>
-      <p class="placeholder">[PENDIENTE: tratamiento de datos según la Ley 1581 de 2012 (Colombia) — finalidad, derechos del titular, contacto.]</p>
-    </section>
-
-    <section class="clause">
-      <h2><span class="n">11</span>Ley aplicable y resoluci&oacute;n de conflictos</h2>
-      <p class="placeholder">[PENDIENTE: legislación colombiana aplicable y mecanismo de solución de controversias.]</p>
+      <h2><span class="n">06</span>Canales de comunicaci&oacute;n y atenci&oacute;n</h2>
+      <p>Los canales oficiales para el manejo del proyecto, env&iacute;o de avances y recepci&oacute;n de requerimientos son WhatsApp y correo electr&oacute;nico.</p>
+      <p>Entendemos la din&aacute;mica del mundo digital, por lo que no manejamos un horario de atenci&oacute;n r&iacute;gido. Nuestro compromiso es revisar tus solicitudes y brindarte una respuesta en el menor tiempo posible, siempre cuanto antes.</p>
     </section>
 
   </div>

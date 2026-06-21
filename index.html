@@ -76,7 +76,7 @@
 
   /* AURORA */
   .aurora{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;}
-  .aurora__blob{position:absolute;border-radius:50%;filter:blur(95px);will-change:transform;}
+  .aurora__blob{position:absolute;border-radius:50%;filter:blur(120px);will-change:transform;}
   .blob-a{width:50vw;height:50vw;max-width:760px;max-height:760px;top:-22%;left:0;opacity:.5;background:radial-gradient(circle at 40% 40%,var(--c-accent) 0%,rgba(229,12,51,.42) 34%,rgba(58,0,8,0) 70%);}
   .blob-b{width:42vw;height:42vw;max-width:600px;max-height:600px;bottom:-26%;right:-10%;opacity:.5;background:radial-gradient(circle at 50% 50%,var(--c-deep) 0%,rgba(229,12,51,.28) 42%,rgba(22,0,2,0) 72%);}
 
@@ -230,7 +230,9 @@
 
   /* CONTACTO */
   .contact{padding:clamp(100px,14vh,190px) 0 12px;position:relative;}
-  .contact .aurora__blob{opacity:.5;}
+  /* Separador ligero entre secciones (color uniforme) */
+  .sep{position:relative;height:0;display:flex;justify-content:center;z-index:3;}
+  .sep span{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(620px,80vw);height:1px;background:rgba(255,237,217,.22);}
   .contact .wrap{position:relative;z-index:2;}
   .contact .eyebrow{display:block;margin-bottom:34px;}
   .contact h2{font-size:clamp(2.6rem,9vw,7rem);line-height:.95;margin-bottom:.16em;}
@@ -239,14 +241,23 @@
   .contact__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(36px,5vw,72px);align-items:stretch;}
   @media (max-width:880px){.contact__grid{grid-template-columns:1fr;}}
 
-  form.cform{display:flex;flex-direction:column;gap:18px;}
+  form.cform{display:flex;flex-direction:column;gap:clamp(24px,4vw,38px);}
+  .cfields{display:flex;flex-direction:column;gap:18px;}
+  .field--msg{flex:1;display:flex;flex-direction:column;}
+  .field--msg textarea{flex:1;}
   .field label{display:block;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--c-cream-mut);margin-bottom:9px;}
   .field input,.field textarea{width:100%;background:transparent;border:1px solid var(--c-line);color:var(--c-cream);font-family:var(--font-body);font-size:1rem;padding:15px 16px;transition:border-color .3s,background .3s;}
   .field textarea{resize:vertical;min-height:138px;}
   .field input:focus,.field textarea:focus{outline:none;border-color:var(--c-accent);background:#ffedd905;}
   .field input::placeholder,.field textarea::placeholder{color:var(--c-cream-mut);}
-  .form-actions{position:relative;margin-top:2px;}
-  .form-actions button{cursor:pointer;}
+  .budget-row{display:flex;gap:10px;}
+  .budget-row input{flex:1;min-width:0;}
+  .budget-row select{background:rgba(229,12,51,.12);border:1px solid var(--c-accent);color:var(--c-accent);font-family:var(--font-display);font-weight:700;font-size:1rem;padding:15px 14px;border-radius:2px;cursor:pointer;min-width:96px;transition:border-color .3s,background .3s;}
+  .budget-row select:hover{background:rgba(229,12,51,.2);}
+  .budget-row select:focus{outline:none;border-color:var(--c-accent);background:rgba(229,12,51,.2);}
+  .budget-row select option{background:var(--c-black);color:var(--c-cream);}
+  .form-actions{position:relative;}
+  .form-actions button{cursor:pointer;width:100%;justify-content:center;}
   .form-status{position:absolute;left:0;top:calc(100% + 10px);font-size:.9rem;color:var(--c-accent);}
 
   .contact__side{display:flex;flex-direction:column;gap:18px;justify-content:space-between;}
@@ -262,22 +273,29 @@
   .clinks{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px;}
   .clinks a{font-size:.88rem;color:var(--c-cream-dim);border-bottom:1px solid transparent;padding-bottom:2px;transition:color .25s,border-color .25s;}
   .clinks a:hover{color:var(--c-accent);border-color:var(--c-accent);}
-  @media (max-width:880px){.contact__side{justify-content:flex-start;}}
+  @media (max-width:880px){.contact__side{justify-content:flex-start;padding-top:0;}}
 
   /* FOOTER */
-  .footer-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px 28px;margin-top:clamp(60px,8vw,96px);padding-top:26px;border-top:2px solid var(--c-accent);}
+  .site-footer{position:relative;margin-top:clamp(70px,10vw,130px);border-top:2px solid var(--c-accent);
+    background:#100207;}
+  .footer-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px 28px;padding-block:clamp(30px,4vw,46px);}
   .footer-bar .brand img{width:30px;}
   .footer-links{display:flex;flex-wrap:wrap;gap:12px 26px;}
-  .footer-links a{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--c-cream-dim);transition:color .25s;}
+  .footer-links a{font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;color:var(--c-cream);transition:color .25s;}
   .footer-links a:hover{color:var(--c-accent);}
-  .footer-bar small{color:var(--c-cream-mut);font-size:.76rem;letter-spacing:.06em;}
+  .footer-bar small{color:var(--c-cream-dim);font-size:.78rem;letter-spacing:.06em;}
 
   /* REVEAL */
-  .reveal{opacity:0;transform:translateY(30px);transition:opacity .85s var(--ease),transform .85s var(--ease);}
-  .reveal.in{opacity:1;transform:none;}
-  .reveal[data-d="1"]{transition-delay:.07s;}.reveal[data-d="2"]{transition-delay:.14s;}
-  .reveal[data-d="3"]{transition-delay:.21s;}.reveal[data-d="4"]{transition-delay:.28s;}
-  .reveal[data-d="5"]{transition-delay:.35s;}.reveal[data-d="6"]{transition-delay:.42s;}
+  .reveal{opacity:0;transform:translateY(34px) scale(.99);filter:blur(6px);
+    transition:opacity .9s var(--ease),transform .9s var(--ease),filter .9s var(--ease);}
+  .reveal.in{opacity:1;transform:none;filter:blur(0);}
+  .reveal--left{transform:translateX(-44px);} .reveal--left.in{transform:none;}
+  .reveal--right{transform:translateX(44px);} .reveal--right.in{transform:none;}
+  .reveal--scale{transform:scale(.93);} .reveal--scale.in{transform:none;}
+  .reveal[data-d="1"]{transition-delay:.08s;}.reveal[data-d="2"]{transition-delay:.16s;}
+  .reveal[data-d="3"]{transition-delay:.24s;}.reveal[data-d="4"]{transition-delay:.32s;}
+  .reveal[data-d="5"]{transition-delay:.40s;}.reveal[data-d="6"]{transition-delay:.48s;}
+  @media (max-width:600px){.reveal{filter:none;transition:opacity .7s var(--ease),transform .7s var(--ease);}}
 
   /* BOTONES FLOTANTES */
   .fab{position:fixed;right:22px;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:55;transition:transform .35s var(--ease),opacity .35s;}
@@ -318,7 +336,8 @@
     .ccard{padding:20px;}
     .services__intro{gap:18px;margin-bottom:34px;}
     .services__foot{gap:18px;}
-    .footer-bar{margin-top:48px;gap:14px 22px;}
+    .site-footer{margin-top:60px;}
+    .footer-bar{gap:14px 22px;}
   }
 
   @media (prefers-reduced-motion:reduce){
@@ -376,7 +395,7 @@
 <!-- ¿POR QUÉ QUANTIXZ? -->
 <section class="about" id="about">
   <div class="wrap">
-    <div class="section-head reveal">
+    <div class="section-head reveal reveal--left">
       <span class="num">01</span>
       <h2 class="display">&iquest;Por qu&eacute; Quantixz?</h2>
     </div>
@@ -392,7 +411,7 @@
           <div class="stat"><b>50%</b><span>M&aacute;s &aacute;giles</span></div>
         </div>
       </div>
-      <div class="why reveal" data-d="2">
+      <div class="why reveal reveal--right" data-d="2">
         <ul>
           <li>{ICON_CHECK} <span><b>50% m&aacute;s &aacute;giles</b> que la competencia</span></li>
           <li>{ICON_CHECK} <span><b>+100</b> clientes satisfechos</span></li>
@@ -412,7 +431,7 @@
 <section class="benefits" id="benefits">
   <div class="aurora" data-parallax="0.10" aria-hidden="true"><div class="aurora__blob blob-b" style="top:0;right:-12%;bottom:auto;"></div></div>
   <div class="wrap">
-    <div class="section-head reveal">
+    <div class="section-head reveal reveal--left">
       <span class="num">02</span>
       <h2 class="display">Beneficios</h2>
       <p class="lead">Trabajar con nosotros es invertir en una marca con luz propia, sin agotar tus recursos.</p>
@@ -428,8 +447,12 @@
 
 <!-- SERVICIOS (03) -->
 <section class="services" id="services">
+  <div class="aurora" data-parallax="0.07" aria-hidden="true">
+    <div class="aurora__blob blob-b" style="top:4%;left:-2%;right:auto;bottom:auto;opacity:.2;"></div>
+    <div class="aurora__blob blob-a" style="top:auto;bottom:4%;right:0;left:auto;opacity:.15;"></div>
+  </div>
   <div class="wrap">
-    <div class="section-head reveal">
+    <div class="section-head reveal reveal--left">
       <span class="num">03</span>
       <h2 class="display">Servicios</h2>
     </div>
@@ -447,9 +470,12 @@
 
 <!-- PROYECTOS (04) -->
 <section class="work" id="work">
-  <div class="aurora" data-parallax="0.10" aria-hidden="true"><div class="aurora__blob blob-b" style="top:14%;right:-10%;bottom:auto;"></div></div>
+  <div class="aurora" data-parallax="0.10" aria-hidden="true">
+    <div class="aurora__blob blob-b" style="top:10%;right:-2%;bottom:auto;"></div>
+    <div class="aurora__blob blob-a" style="top:auto;bottom:2%;left:-2%;opacity:.18;"></div>
+  </div>
   <div class="wrap">
-    <div class="section-head reveal">
+    <div class="section-head reveal reveal--left">
       <span class="num">04</span>
       <h2 class="display">Proyectos</h2>
       <p class="lead">Identidades, empaques, contenido y dise&ntilde;o que conecta. Una selecci&oacute;n del trabajo en Behance.</p>
@@ -465,28 +491,30 @@
 
 <!-- CONTACTO -->
 <section class="contact" id="contact">
-  <div class="aurora" data-parallax="0.14" aria-hidden="true"><div class="aurora__blob blob-a" style="top:auto;bottom:-30%;left:-12%;"></div></div>
   <div class="wrap">
     <span class="eyebrow reveal">&iquest;Construimos tu marca?</span>
     <h2 class="display reveal">Hablemos<span class="accent">.</span></h2>
     <p class="contact__sub reveal" data-d="1">&iquest;Est&aacute;s listo para contar tu historia como realmente se merece? Escr&iacute;benos y empecemos.</p>
 
-    <div class="contact__grid">
-      <form class="cform reveal" action="https://api.web3forms.com/submit" method="POST" id="contactForm">
-        <input type="hidden" name="access_key" value="45dcf393-fa2d-4f63-a72a-01a0e1ee9e70">
-        <input type="hidden" name="subject" value="Nuevo mensaje desde quantixz.com">
-        <input type="hidden" name="from_name" value="Web Quantixz">
-        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
-        <div class="field"><label for="cf-name">Nombre</label><input id="cf-name" type="text" name="name" placeholder="Tu nombre" required></div>
-        <div class="field"><label for="cf-email">Correo</label><input id="cf-email" type="email" name="email" placeholder="tucorreo@ejemplo.com" required></div>
-        <div class="field"><label for="cf-msg">Cu&eacute;ntanos de tu proyecto</label><textarea id="cf-msg" name="message" placeholder="¿Qué necesitas? Marca, packaging, contenido, web..." required></textarea></div>
-        <div class="form-actions">
-          <button class="btn btn--primary" type="submit">Enviar mensaje <span class="arrow">&rarr;</span></button>
-          <p class="form-status" id="formStatus" role="status"></p>
+    <form class="cform reveal" action="https://api.web3forms.com/submit" method="POST" id="contactForm">
+      <input type="hidden" name="access_key" value="45dcf393-fa2d-4f63-a72a-01a0e1ee9e70">
+      <input type="hidden" name="subject" value="Nuevo mensaje desde quantixz.com">
+      <input type="hidden" name="from_name" value="Web Quantixz">
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+      <div class="contact__grid">
+        <div class="cfields">
+          <div class="field"><label for="cf-name">Nombre</label><input id="cf-name" type="text" name="name" placeholder="Tu nombre" required></div>
+          <div class="field"><label for="cf-email">Correo</label><input id="cf-email" type="email" name="email" placeholder="tucorreo@ejemplo.com" required></div>
+          <div class="field"><label for="cf-budget">Presupuesto (opcional)</label>
+            <div class="budget-row">
+              <input id="cf-budget" type="text" inputmode="numeric" name="presupuesto" placeholder="Tu presupuesto estimado">
+              <select name="moneda" aria-label="Moneda"><option value="COP">COP</option><option value="USD">USD</option></select>
+            </div>
+          </div>
+          <div class="field field--msg"><label for="cf-msg">Cu&eacute;ntanos de tu proyecto</label><textarea id="cf-msg" name="message" placeholder="¿Qué necesitas? Marca, packaging, contenido, web..." required></textarea></div>
         </div>
-      </form>
 
-      <div class="contact__side">
+        <div class="contact__side">
         <div class="ccard calendly reveal" data-d="1">
           <h3>Agenda una llamada</h3>
           <p>30 minutos, sin compromiso, para entender tu marca y trazar el siguiente paso juntos.</p>
@@ -506,18 +534,27 @@
           </div>
         </div>
       </div>
-    </div>
+      </div>
+      <div class="form-actions">
+        <button class="btn btn--primary" type="submit">Enviar mensaje <span class="arrow">&rarr;</span></button>
+        <p class="form-status" id="formStatus" role="status"></p>
+      </div>
+    </form>
 
-    <div class="footer-bar">
-      <a class="brand" href="#top" aria-label="Quantixz, inicio"><img src="./blanco.svg" alt="Logo Quantixz" /><b>Quantixz</b></a>
-      <nav class="footer-links">
-        <a href="./faq.html">FAQ</a>
-        <a href="./terminos-y-condiciones.html">T&eacute;rminos y condiciones</a>
-      </nav>
-      <small>&copy; <span id="year"></span> Quantixz · Alejandro Rojas G&oacute;mez</small>
-    </div>
   </div>
 </section>
+
+<!-- FOOTER (banda full-bleed con degradado, sin corte) -->
+<footer class="site-footer">
+  <div class="wrap footer-bar">
+    <a class="brand" href="#top" aria-label="Quantixz, inicio"><img src="./blanco.svg" alt="Logo Quantixz" /><b>Quantixz</b></a>
+    <nav class="footer-links">
+      <a href="./faq.html">FAQ</a>
+      <a href="./terminos-y-condiciones.html">T&eacute;rminos y condiciones</a>
+    </nav>
+    <small>&copy; <span id="year"></span> Quantixz · Alejandro Rojas G&oacute;mez</small>
+  </div>
+</footer>
 
 <a class="fab wa-float" href="https://wa.me/573156057195" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">{ICON_WA}</a>
 <button class="fab to-top" id="toTop" aria-label="Subir al inicio">&uarr;</button>
@@ -554,14 +591,17 @@
   ];
   (function(){
     const grid=document.getElementById("projectGrid");
-    PROJECTS.forEach(p=>{
+    const cols=innerWidth<=480?1:innerWidth<=760?2:innerWidth<=1024?3:4;
+    PROJECTS.forEach((p,i)=>{
       const a=document.createElement("a");
-      a.className="card";a.href=p.link;a.target="_blank";a.rel="noopener";
+      a.className="card reveal reveal--scale";a.href=p.link;a.target="_blank";a.rel="noopener";
+      a.dataset.d=String((i%cols)+1);  // cascada por columna
       a.setAttribute("aria-label",p.title+", ver en Behance");
       a.innerHTML='<img loading="lazy" referrerpolicy="no-referrer" src="'+p.img+'" alt="'+p.title.replace(/"/g,"&quot;")+'" />'+
         '<div class="card__overlay"><span class="card__title">'+p.title+'</span><span class="card__go">Ver proyecto &#8599;</span></div>';
       grid.appendChild(a);
     });
+    initReveal(grid.querySelectorAll(".reveal"));
   })();
 
   /* SERVICIOS */
@@ -617,6 +657,8 @@
       return {l:right?rnd(94,99.5):rnd(0.5,6),t:rnd(3,97)};  // solo márgenes laterales
     };
     document.querySelectorAll("section").forEach((sec,si)=>{
+      // separador ligero entre secciones (no antes del hero)
+      if(si>0){const sep=document.createElement("div");sep.className="sep";sep.setAttribute("aria-hidden","true");sep.innerHTML="<span></span>";sec.parentNode.insertBefore(sep,sec);}
       const layer=document.createElement("div");
       layer.className="stars";layer.setAttribute("aria-hidden","true");
       layer.dataset.parallax=(0.06+(si%3)*0.045).toFixed(3);
