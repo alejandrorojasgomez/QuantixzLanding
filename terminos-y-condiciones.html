@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Términos y Condiciones — Quantixz</title>
+<meta name="description" content="Términos y condiciones de los servicios de Quantixz." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  @font-face{font-family:"Axiforma";src:url("./fonts/Axiforma-Regular.woff2") format("woff2");font-weight:400;font-display:swap;}
+  @font-face{font-family:"Axiforma";src:url("./fonts/Axiforma-Medium.woff2") format("woff2");font-weight:500;font-display:swap;}
+  @font-face{font-family:"Axiforma";src:url("./fonts/Axiforma-Bold.woff2") format("woff2");font-weight:700;font-display:swap;}
+  @font-face{font-family:"Axiforma";src:url("./fonts/Axiforma-Black.woff2") format("woff2");font-weight:900;font-display:swap;}
+  :root{
+    --c-bg:#160002;--c-accent:#e50c33;--c-cream:#ffedd9;--c-deep:#3a0008;--c-black:#0a0001;
+    --c-cream-dim:#ffedd9b3;--c-cream-mut:#ffedd966;--c-line:#ffedd91a;
+    --font-display:"Axiforma","Archivo",system-ui,sans-serif;
+    --font-body:"Axiforma","Archivo",system-ui,sans-serif;
+    --maxw:860px;--gutter:clamp(24px,5vw,68px);--ease:cubic-bezier(.2,.7,.2,1);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--c-bg);color:var(--c-cream);font-family:var(--font-body);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:inherit;text-decoration:none;}
+  ::selection{background:var(--c-accent);color:var(--c-cream);}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gutter);}
+  .display{font-family:var(--font-display);font-weight:900;line-height:1;letter-spacing:-.02em;text-transform:uppercase;}
+
+  header.site{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:18px var(--gutter);background:rgba(10,0,1,.72);backdrop-filter:blur(12px);border-bottom:1px solid var(--c-line);}
+  .brand{display:flex;align-items:center;gap:13px;}
+  .brand img{width:38px;transition:transform .5s var(--ease);}
+  .brand:hover img{transform:rotate(-12deg) scale(1.08);}
+  .brand b{font-family:var(--font-display);font-weight:900;letter-spacing:.05em;font-size:1.05rem;text-transform:uppercase;}
+  .back{font-size:.84rem;letter-spacing:.08em;color:var(--c-cream-dim);display:inline-flex;align-items:center;gap:8px;transition:color .25s;}
+  .back:hover{color:var(--c-accent);}
+
+  .aurora{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;}
+  .blob{position:absolute;border-radius:50%;filter:blur(95px);width:60vw;height:60vw;max-width:740px;max-height:740px;top:-20%;left:-6%;opacity:.4;background:radial-gradient(circle at 40% 40%,var(--c-accent) 0%,rgba(229,12,51,.4) 34%,rgba(58,0,8,0) 70%);}
+
+  .hero{position:relative;padding:160px 0 40px;}
+  .hero .wrap{position:relative;z-index:2;}
+  .hero .eyebrow{font-size:.8rem;letter-spacing:.34em;text-transform:uppercase;color:var(--c-accent);font-weight:600;display:inline-flex;align-items:center;gap:14px;margin-bottom:22px;}
+  .hero .eyebrow::before{content:"";width:42px;height:1px;background:var(--c-accent);}
+  .hero h1{font-size:clamp(2.6rem,9vw,5rem);}
+  .hero p.sub{color:var(--c-cream-dim);max-width:60ch;margin-top:20px;font-size:1.04rem;}
+  .updated{margin-top:14px;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--c-cream-mut);}
+
+  .doc{position:relative;padding:36px 0 clamp(80px,12vh,140px);}
+  .doc .wrap{position:relative;z-index:2;}
+  /* PLACEHOLDER: estilo de bloques editables */
+  .tpl{border:1px dashed var(--c-line);background:#ffedd905;padding:14px 18px;margin:0 0 30px;color:var(--c-cream-mut);font-size:.86rem;letter-spacing:.02em;border-radius:2px;}
+  .tpl b{color:var(--c-accent);}
+  section.clause{margin-bottom:36px;}
+  section.clause h2{font-family:var(--font-display);font-weight:700;text-transform:none;letter-spacing:-.01em;font-size:clamp(1.3rem,3vw,1.8rem);margin-bottom:12px;}
+  section.clause h2 .n{color:var(--c-accent);margin-right:10px;}
+  section.clause p,section.clause li{color:var(--c-cream-dim);font-size:1.02rem;}
+  section.clause ul{margin:10px 0 0 18px;display:flex;flex-direction:column;gap:6px;}
+  .placeholder{color:var(--c-cream-mut);font-style:italic;border-left:2px solid var(--c-accent);padding-left:14px;}
+
+  footer{border-top:2px solid var(--c-accent);padding:26px 0;margin-top:40px;}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:center;}
+  footer .links{display:flex;gap:12px 24px;flex-wrap:wrap;}
+  footer a.fl{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--c-cream-dim);transition:color .25s;}
+  footer a.fl:hover{color:var(--c-accent);}
+  footer small{color:var(--c-cream-mut);font-size:.76rem;}
+</style>
+</head>
+<body>
+<header class="site">
+  <a class="brand" href="./index.html" aria-label="Quantixz, inicio"><img src="./blanco.svg" alt="Logo Quantixz" /><b>Quantixz</b></a>
+  <a class="back" href="./index.html">&larr; Volver al inicio</a>
+</header>
+
+<section class="hero">
+  <div class="aurora"><div class="blob"></div></div>
+  <div class="wrap">
+    <span class="eyebrow">Legal</span>
+    <h1 class="display">T&eacute;rminos y<br>Condiciones</h1>
+    <p class="sub">Estas condiciones regulan la prestaci&oacute;n de los servicios de dise&ntilde;o y branding de Quantixz.</p>
+    <p class="updated">&Uacute;ltima actualizaci&oacute;n: [PENDIENTE: fecha]</p>
+  </div>
+</section>
+
+<div class="doc">
+  <div class="wrap">
+
+    <!-- ====================================================================
+         PLANTILLA T&C — Alejandro: reemplaza cada bloque [PENDIENTE] con tu
+         texto final. Puedes añadir, quitar o reordenar las <section class="clause">.
+         Cada cláusula es: <h2><span class="n">01</span> Título</h2> + contenido.
+         ==================================================================== -->
+    <div class="tpl"><b>Plantilla.</b> Estructura lista; pega aqu&iacute; el texto real de cada cl&aacute;usula. Las marcas <b>[PENDIENTE]</b> indican lo que falta completar.</div>
+
+    <section class="clause">
+      <h2><span class="n">01</span>Identificaci&oacute;n</h2>
+      <p class="placeholder">[PENDIENTE: nombre/razón social, NIT o documento, ciudad y datos de contacto de Quantixz.]</p>
+    </section>
+
+    <section class="clause">
+      <h2><span class="n">02</span>Servicios</h2>
+      <p class="placeholder">[PENDIENTE: descripción de los servicios — branding, identidad visual, packaging, contenido, web, e-sport, etc. y qué incluye/no incluye cada cotización.]</p>
+    </section>
+
+    <section class="clause">
+      <h2><span class="n">03</span>Cotizaciones y precios</h2>
+      <p class="placeholder">[PENDIENTE: cómo se arma el presupuesto personalizado, vigencia de la cotización, moneda, impuestos.]</p>
+    </section>
+
+    <section class="clause">
+      <h2><span class="n">04</span>Forma de pago</h2>
+      <p class="placeholder">[PENDIENTE: anticipo, saldos, métodos de pago, planes de financiación, mora.]</p>
+    </section>
+
+    <section class="clause">
+      <h2><span class="n">05</span>Tiempos de entrega y revisiones</h2>
+      <p class="placeholder">[PENDIENTE: plazos estimados, número de rondas de cambios incluidas, costo de revisiones adicionales.]</p>
+    </section>
+
+    <section class="clause">
+      <h2><span class="n">06</span>Propiedad intelectual y derechos de uso</h2>
+      <p class="placeholder">[PENDIENTE: cesión de derechos al cliente tras el pago, derecho de Quantixz a mostrar el trabajo en portafolio.]</p>
+    </section>
+
+    <section class="clause">
+      <h2><span class="n">07</span>Cancelaciones y reembolsos</h2>
+      <p class="placeholder">[PENDIENTE: condiciones de cancelación por cualquiera de las partes y política de reembolso del anticipo.]</p>
+    </section>
+
+    <section class="clause">
+      <h2><span class="n">08</span>Confidencialidad</h2>
+      <p class="placeholder">[PENDIENTE: manejo de la información que comparta el cliente.]</p>
+    </section>
+
+    <section class="clause">
+      <h2><span class="n">09</span>Sesiones fotográficas</h2>
+      <p class="placeholder">[PENDIENTE: dónde se realizan, logística, responsabilidades.]</p>
+    </section>
+
+    <section class="clause">
+      <h2><span class="n">10</span>Datos personales</h2>
+      <p class="placeholder">[PENDIENTE: tratamiento de datos según la Ley 1581 de 2012 (Colombia) — finalidad, derechos del titular, contacto.]</p>
+    </section>
+
+    <section class="clause">
+      <h2><span class="n">11</span>Ley aplicable y resoluci&oacute;n de conflictos</h2>
+      <p class="placeholder">[PENDIENTE: legislación colombiana aplicable y mecanismo de solución de controversias.]</p>
+    </section>
+
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="./index.html"><img src="./blanco.svg" alt="" style="width:28px"/><b>Quantixz</b></a>
+    <nav class="links">
+      <a class="fl" href="./index.html">Inicio</a>
+      <a class="fl" href="./faq.html">FAQ</a>
+      <a class="fl" href="./index.html#contact">Hablemos</a>
+    </nav>
+    <small>&copy; <span id="year"></span> Quantixz · Alejandro Rojas G&oacute;mez</small>
+  </div>
+</footer>
+<script>document.getElementById("year").textContent=new Date().getFullYear();</script>
+</body>
+</html>

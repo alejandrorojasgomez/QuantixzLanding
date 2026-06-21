@@ -46,6 +46,9 @@
   ::selection{background:var(--c-accent);color:var(--c-cream);}
   .wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gutter);}
 
+  /* Radio sutil (2px) en todos los recuadros */
+  .btn,.nav-cta,.benefit,.benefit__icon,.card,.ccard,.schip,.field input,.field textarea,.why{border-radius:2px;}
+
   .display{font-family:var(--font-display);font-weight:900;line-height:1.0;letter-spacing:-.02em;text-transform:uppercase;}
   .eyebrow{font-size:.8rem;letter-spacing:.34em;text-transform:uppercase;color:var(--c-accent);font-weight:600;}
 
@@ -64,14 +67,6 @@
   .star.glow{filter:blur(2px);mix-blend-mode:screen;}
   @keyframes twinkle{0%,100%{opacity:var(--o,.3);}50%{opacity:calc(var(--o,.3) * 1.7);}}
   @keyframes drift{from{transform:translate(0,0) scale(1) rotate(0deg);}to{transform:translate(var(--dx,20px),var(--dy,-16px)) scale(1.2) rotate(16deg);}}
-
-  /* DESTELLOS de luz */
-  .flare{position:absolute;border-radius:50%;pointer-events:none;mix-blend-mode:screen;will-change:transform,opacity;
-    animation:flarepulse var(--fp,7s) linear infinite;animation-delay:var(--dl,0s);}
-  @keyframes flarepulse{
-    0%{opacity:0;transform:scale(.6);animation-timing-function:ease-in;}
-    50%{opacity:var(--o,.45);transform:scale(1);animation-timing-function:ease-out;}
-    100%{opacity:0;transform:scale(.6);}}
 
   /* SATURNO / agujero negro ambiental: cubre casi todo el hero, ultra difuminado */
   .saturn{position:absolute;z-index:0;pointer-events:none;opacity:.03;mix-blend-mode:screen;
@@ -100,15 +95,15 @@
   .nav-cta:hover{background:var(--c-accent);border-color:var(--c-accent);}
 
   /* DOT NAV vertical (PC) */
-  .dotnav{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:55;display:flex;flex-direction:column;gap:18px;align-items:flex-end;}
-  .dotnav a{display:flex;align-items:center;gap:10px;color:var(--c-cream-mut);}
-  .dotnav .dot{width:9px;height:9px;border-radius:50%;border:1px solid var(--c-cream-mut);transition:background .3s,border-color .3s,transform .3s var(--ease);}
-  .dotnav .lbl{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;opacity:0;transform:translateX(8px);transition:opacity .3s,transform .3s var(--ease);white-space:nowrap;}
+  .dotnav{position:fixed;right:12px;top:50%;transform:translateY(-50%);z-index:55;display:flex;flex-direction:column;gap:13px;align-items:flex-end;}
+  .dotnav a{display:flex;align-items:center;gap:8px;color:var(--c-cream-mut);}
+  .dotnav .dot{width:6px;height:6px;border-radius:50%;border:1px solid var(--c-cream-mut);transition:background .3s,border-color .3s,transform .3s var(--ease);}
+  .dotnav .lbl{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;opacity:0;transform:translateX(8px);transition:opacity .3s,transform .3s var(--ease);white-space:nowrap;}
   .dotnav a:hover .lbl{opacity:1;transform:translateX(0);color:var(--c-cream);}
-  .dotnav a:hover .dot{border-color:var(--c-accent);transform:scale(1.2);}
-  .dotnav a.active .dot{background:var(--c-accent);border-color:var(--c-accent);transform:scale(1.25);}
+  .dotnav a:hover .dot{border-color:var(--c-accent);transform:scale(1.3);}
+  .dotnav a.active .dot{background:var(--c-accent);border-color:var(--c-accent);transform:scale(1.4);}
   .dotnav a.active .lbl{opacity:1;transform:translateX(0);color:var(--c-cream);}
-  @media (max-width:1024px){.dotnav{display:none;}}
+  @media (max-width:1180px){.dotnav{display:none;}}
 
   /* HERO */
   .hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:110px 0 70px;overflow:hidden;}
@@ -210,12 +205,12 @@
   @media (hover:none),(max-width:860px){.srow .sitems{max-height:none;opacity:1;transform:none;margin-top:14px;}}
   .services__foot{margin-top:clamp(36px,5vw,56px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:22px;}
   .services__foot .note{color:var(--c-cream-dim);font-size:1.02rem;display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
-  .services__foot .tag{border:1px dashed var(--c-line);padding:6px 14px;font-size:.8rem;letter-spacing:.06em;color:var(--c-accent);text-transform:uppercase;}
+  .services__foot .tag{border:2px solid var(--c-accent);background:rgba(229,12,51,.10);padding:9px 18px;font-size:.82rem;font-weight:700;letter-spacing:.08em;color:var(--c-cream);text-transform:uppercase;border-radius:2px;}
 
   /* PROYECTOS */
   .work{padding:clamp(90px,12vh,170px) 0;position:relative;}
   .work .aurora__blob{opacity:.35;}
-  .work__stage{perspective:1600px;position:relative;z-index:2;}
+  .work__stage{perspective:2600px;position:relative;z-index:2;}
   .work__tilt{transform-style:preserve-3d;will-change:transform;}
   .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.2vw,18px);}
   @media (max-width:1024px){.grid{grid-template-columns:repeat(3,1fr);}}
@@ -238,7 +233,7 @@
   .contact .aurora__blob{opacity:.5;}
   .contact .wrap{position:relative;z-index:2;}
   .contact .eyebrow{display:block;margin-bottom:34px;}
-  .contact h2{font-size:clamp(3.4rem,15vw,11rem);line-height:.92;margin-bottom:.16em;}
+  .contact h2{font-size:clamp(2.6rem,9vw,7rem);line-height:.95;margin-bottom:.16em;}
   .contact h2 .accent{color:var(--c-accent);}
   .contact__sub{font-size:clamp(1.1rem,1.9vw,1.4rem);color:var(--c-cream-dim);max-width:50ch;margin-bottom:clamp(40px,5vw,60px);}
   .contact__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(36px,5vw,72px);align-items:stretch;}
@@ -270,15 +265,12 @@
   @media (max-width:880px){.contact__side{justify-content:flex-start;}}
 
   /* FOOTER */
-  .footer-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;margin-top:clamp(70px,9vw,110px);padding-top:30px;border-top:1px solid var(--c-line);}
-  .footer-end{margin-top:34px;border-top:2px solid var(--c-accent);padding-top:22px;display:flex;flex-wrap:wrap;justify-content:center;gap:14px 30px;}
-  .footer-end a{font-size:.84rem;letter-spacing:.08em;text-transform:uppercase;color:var(--c-cream-dim);transition:color .25s;}
-  .footer-end a:hover{color:var(--c-accent);}
-  .footer-bar .brand img{width:32px;}
+  .footer-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px 28px;margin-top:clamp(60px,8vw,96px);padding-top:26px;border-top:2px solid var(--c-accent);}
+  .footer-bar .brand img{width:30px;}
+  .footer-links{display:flex;flex-wrap:wrap;gap:12px 26px;}
+  .footer-links a{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--c-cream-dim);transition:color .25s;}
+  .footer-links a:hover{color:var(--c-accent);}
   .footer-bar small{color:var(--c-cream-mut);font-size:.76rem;letter-spacing:.06em;}
-  .avail{display:inline-flex;align-items:center;gap:10px;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--c-cream);}
-  .avail .pulse{width:9px;height:9px;border-radius:50%;background:var(--c-accent);box-shadow:0 0 0 0 rgba(229,12,51,.6);animation:pulse 2.2s infinite;}
-  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(229,12,51,.55);}70%{box-shadow:0 0 0 13px rgba(229,12,51,0);}100%{box-shadow:0 0 0 0 rgba(229,12,51,0);}}
 
   /* REVEAL */
   .reveal{opacity:0;transform:translateY(30px);transition:opacity .85s var(--ease),transform .85s var(--ease);}
@@ -296,6 +288,38 @@
   .to-top.show{opacity:1;pointer-events:auto;}
   .to-top:hover{border-color:var(--c-accent);transform:translateY(-2px);}
   @media (min-width:821px){.to-top{display:none;}}
+
+  /* TÁCTIL: evita estados "pegados" tras tap y efectos que no aplican sin cursor */
+  @media (hover:none){
+    .benefit:hover,.card:hover,.ccard:hover,.btn:hover,.srow:hover{transform:none;}
+    .card:hover img{transform:none;filter:saturate(.9) brightness(.82);}
+    .srow:hover{padding-left:0;}
+    .srow:hover::before{width:0;}
+    .btn--primary:hover,.btn--ghost:hover{box-shadow:none;}
+    .why li:hover{padding-left:0;}
+    .card__go{opacity:1;transform:none;}
+  }
+
+  /* MÓVIL: espaciado más compacto y limpio */
+  @media (max-width:600px){
+    .hero{min-height:auto;padding:96px 0 64px;}
+    .about,.benefits,.services,.work{padding-block:clamp(56px,9vh,86px);}
+    .contact{padding-top:clamp(70px,10vh,100px);}
+    .section-head{margin-bottom:30px;gap:6px 16px;}
+    .about__lead,.about__body,.hero__tag,.hero__sub,.contact__sub,.benefit p{max-width:none;}
+    .about__body{margin-top:22px;}
+    .about__stats{gap:12px;margin-top:30px;}
+    .stat{min-width:0;flex:1 1 92px;}
+    .stat b{font-size:2rem;}
+    .hero__actions{gap:12px;width:100%;}
+    .hero__actions .btn{flex:1 1 auto;justify-content:center;}
+    .benefit{padding:26px 22px;}
+    .benefit__icon{width:54px;height:54px;margin-bottom:20px;}
+    .ccard{padding:20px;}
+    .services__intro{gap:18px;margin-bottom:34px;}
+    .services__foot{gap:18px;}
+    .footer-bar{margin-top:48px;gap:14px 22px;}
+  }
 
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto;}
@@ -464,13 +488,13 @@
 
       <div class="contact__side">
         <div class="ccard calendly reveal" data-d="1">
-          <h3>Agenda tu cita</h3>
-          <p>Sin compromiso. 30 minutos para conocer tu marca y c&oacute;mo podemos ayudarte.</p>
+          <h3>Agenda una llamada</h3>
+          <p>30 minutos, sin compromiso, para entender tu marca y trazar el siguiente paso juntos.</p>
           <a class="btn btn--primary" href="https://calendly.com/quantixz-contact/discover?utm_source=ig&utm_medium=social&utm_content=link_in_bio&utm_id=97760_v0_s00_e0_tv3" target="_blank" rel="noopener">Reservar en Calendly <span class="arrow">&rarr;</span></a>
         </div>
         <a class="ccard reveal" data-d="2" href="https://wa.me/573156057195" target="_blank" rel="noopener">
           <span class="ck">{ICON_WA} WhatsApp</span>
-          <span class="cv">+57 315 6057195 <span class="arrow">&rarr;</span></span>
+          <span class="cv">Escr&iacute;benos por WhatsApp <span class="arrow">&rarr;</span></span>
         </a>
         <div class="ccard reveal" data-d="3">
           <span class="ck">{ICON_AT} Redes &amp; portafolio</span>
@@ -486,14 +510,11 @@
 
     <div class="footer-bar">
       <a class="brand" href="#top" aria-label="Quantixz, inicio"><img src="./blanco.svg" alt="Logo Quantixz" /><b>Quantixz</b></a>
-      <span class="avail"><i class="pulse"></i>Disponible para freelance</span>
+      <nav class="footer-links">
+        <a href="./faq.html">FAQ</a>
+        <a href="./terminos-y-condiciones.html">T&eacute;rminos y condiciones</a>
+      </nav>
       <small>&copy; <span id="year"></span> Quantixz · Alejandro Rojas G&oacute;mez</small>
-    </div>
-    <div class="footer-end">
-      <a href="https://instagram.com/quantixzstudio" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://www.linkedin.com/in/alejandro-rojas-gomez-7614612b0/?locale=es" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://www.behance.net/" target="_blank" rel="noopener">Behance</a>
-      <a href="https://wa.me/573156057195" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
 </section>
@@ -588,8 +609,7 @@
   (function stars(){
     const STAR_CREAM="./Asset%209.svg",STAR_RED="./Asset%2011.svg",GLOWS=["./Asset%208.svg","./Asset%2010.svg"];
     const mobile=innerWidth<=760;
-    const perStars=mobile?2:3;          // mitad de estrellas
-    const perFlares=mobile?1:2;         // destellos de luz
+    const perStars=mobile?2:3;          // pocas estrellas
     const rnd=(a,b)=>a+Math.random()*(b-a);
     const pm=()=>Math.random()<.5?-1:1;
     // Posición en los bordes/márgenes, para no taparse con textos ni recuadros
@@ -614,17 +634,6 @@
           'style="left:'+p.l.toFixed(2)+'%;top:'+p.t.toFixed(2)+'%;width:'+size.toFixed(1)+'px;'+
           '--o:'+op.toFixed(3)+';--tw:'+rnd(3,7).toFixed(2)+'s;--dl:'+rnd(0,6).toFixed(2)+'s;'+
           '--dx:'+(pm()*rnd(14,46)).toFixed(1)+'px;--dy:'+(pm()*rnd(14,46)).toFixed(1)+'px;--dr:'+rnd(7,16).toFixed(2)+'s;">';
-      }
-      // destellos de luz (soft flares, color variable) tambien hacia los bordes
-      for(let f=0;f<perFlares;f++){
-        const red=Math.random()<0.55;
-        const col=red?"rgba(229,12,51,":"rgba(255,237,217,";
-        const sz=rnd(120,260);
-        const p=edgePos();
-        html+='<span class="flare" style="left:'+p.l.toFixed(2)+'%;top:'+p.t.toFixed(2)+'%;'+
-          'width:'+sz.toFixed(0)+'px;height:'+sz.toFixed(0)+'px;'+
-          'background:radial-gradient(circle,'+col+'.6) 0%,'+col+'0) 68%);'+
-          '--o:'+rnd(0.09,0.20).toFixed(3)+';--fp:'+rnd(6,11).toFixed(2)+'s;--dl:'+rnd(0,7).toFixed(2)+'s;"></span>';
       }
       layer.innerHTML=html;
       sec.insertBefore(layer,sec.firstChild);
@@ -655,8 +664,8 @@
   /* HOVER glow benefits */
   document.querySelectorAll(".benefit").forEach(b=>b.addEventListener("pointermove",e=>{const r=b.getBoundingClientRect();b.style.setProperty("--mx",(e.clientX-r.left)+"px");b.style.setProperty("--my",(e.clientY-r.top)+"px");}));
 
-  /* PARALLAX */
-  if(!reduce){
+  /* PARALLAX (solo desktop, evita jank en móvil) */
+  if(!reduce&&innerWidth>760){
     const layers=[...document.querySelectorAll("[data-parallax]")];let t=false;
     const upd=()=>{const y=scrollY;layers.forEach(l=>{const s=parseFloat(l.dataset.parallax)||.1;const off=(y-l.parentElement.offsetTop)*s;l.style.transform="translate3d(0,"+off.toFixed(1)+"px,0)";});t=false;};
     addEventListener("scroll",()=>{if(!t){requestAnimationFrame(upd);t=true;}},{passive:true});upd();
@@ -665,7 +674,7 @@
   /* TILT 3D proyectos (solo PC) */
   if(!reduce&&innerWidth>760){
     const stage=document.querySelector(".work__stage"),tilt=document.querySelector(".work__tilt");let t2=false;
-    const updTilt=()=>{const r=stage.getBoundingClientRect();const vh=innerHeight;let p=(vh-r.top)/(vh+r.height*0.4);p=Math.max(0,Math.min(1,p));tilt.style.transform="rotateX("+((1-p)*16).toFixed(2)+"deg) scale("+(0.94+p*0.06).toFixed(3)+")";t2=false;};
+    const updTilt=()=>{const r=stage.getBoundingClientRect();const vh=innerHeight;let p=(vh-r.top)/(vh*0.82);p=Math.max(0,Math.min(1,p));tilt.style.transform="rotateX("+((1-p)*12).toFixed(2)+"deg)";t2=false;};
     addEventListener("scroll",()=>{if(!t2){requestAnimationFrame(updTilt);t2=true;}},{passive:true});addEventListener("resize",updTilt);updTilt();
   }
 
