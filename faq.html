@@ -9,10 +9,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 <style>
-  @font-face{font-family:"Axiforma";src:url("./fonts/Axiforma-Regular.woff2") format("woff2");font-weight:400;font-display:swap;}
-  @font-face{font-family:"Axiforma";src:url("./fonts/Axiforma-Medium.woff2") format("woff2");font-weight:500;font-display:swap;}
-  @font-face{font-family:"Axiforma";src:url("./fonts/Axiforma-Bold.woff2") format("woff2");font-weight:700;font-display:swap;}
-  @font-face{font-family:"Axiforma";src:url("./fonts/Axiforma-Black.woff2") format("woff2");font-weight:900;font-display:swap;}
+  @font-face{font-family:"Axiforma";src:url("./axiforma/Kastelov%20-%20Axiforma%20Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Axiforma";src:url("./axiforma/Kastelov%20-%20Axiforma%20Medium.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Axiforma";src:url("./axiforma/Kastelov%20-%20Axiforma%20SemiBold.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Axiforma";src:url("./axiforma/Kastelov%20-%20Axiforma%20Bold.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Axiforma";src:url("./axiforma/Kastelov%20-%20Axiforma%20ExtraBold.woff2") format("woff2");font-weight:800;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Axiforma";src:url("./axiforma/Kastelov%20-%20Axiforma%20Black.woff2") format("woff2");font-weight:900;font-style:normal;font-display:swap;}
   :root{
     --c-bg:#160002;--c-accent:#e50c33;--c-cream:#ffedd9;--c-deep:#3a0008;--c-black:#0a0001;
     --c-cream-dim:#ffedd9b3;--c-cream-mut:#ffedd966;--c-line:#ffedd91a;
@@ -138,7 +140,13 @@
 
   .reveal{opacity:0;transform:translateY(30px);filter:blur(6px);transition:opacity .85s var(--ease),transform .85s var(--ease),filter .85s var(--ease);}
   .reveal.in{opacity:1;transform:none;filter:blur(0);}
-  @media (max-width:600px){.reveal{filter:none;}}
+  @media (max-width:600px){
+    .reveal{filter:none;}
+    header.site{padding:11px var(--gutter);}
+    .brand b{display:none;}
+    .brand img{width:32px;}
+    .back{font-size:.74rem;letter-spacing:.04em;}
+  }
   @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;filter:none;transition:none;}.cursor-glow{display:none;}*,*::before,*::after{transition-duration:.001ms!important;}}
 
   .wa-float{position:fixed;right:22px;bottom:22px;width:56px;height:56px;border-radius:50%;background:var(--c-accent);display:flex;align-items:center;justify-content:center;z-index:55;box-shadow:0 10px 30px -8px rgba(229,12,51,.6);transition:transform .35s var(--ease);}

@@ -9,10 +9,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 <style>
-  @font-face{font-family:"Axiforma";src:url("./fonts/Axiforma-Regular.woff2") format("woff2");font-weight:400;font-display:swap;}
-  @font-face{font-family:"Axiforma";src:url("./fonts/Axiforma-Medium.woff2") format("woff2");font-weight:500;font-display:swap;}
-  @font-face{font-family:"Axiforma";src:url("./fonts/Axiforma-Bold.woff2") format("woff2");font-weight:700;font-display:swap;}
-  @font-face{font-family:"Axiforma";src:url("./fonts/Axiforma-Black.woff2") format("woff2");font-weight:900;font-display:swap;}
+  @font-face{font-family:"Axiforma";src:url("./axiforma/Kastelov%20-%20Axiforma%20Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Axiforma";src:url("./axiforma/Kastelov%20-%20Axiforma%20Medium.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Axiforma";src:url("./axiforma/Kastelov%20-%20Axiforma%20SemiBold.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Axiforma";src:url("./axiforma/Kastelov%20-%20Axiforma%20Bold.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Axiforma";src:url("./axiforma/Kastelov%20-%20Axiforma%20ExtraBold.woff2") format("woff2");font-weight:800;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Axiforma";src:url("./axiforma/Kastelov%20-%20Axiforma%20Black.woff2") format("woff2");font-weight:900;font-style:normal;font-display:swap;}
   :root{
     --c-bg:#160002;--c-accent:#e50c33;--c-cream:#ffedd9;--c-deep:#3a0008;--c-black:#0a0001;
     --c-cream-dim:#ffedd9b3;--c-cream-mut:#ffedd966;--c-line:#ffedd91a;
@@ -68,6 +70,13 @@
   footer a.fl{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--c-cream-dim);transition:color .25s;}
   footer a.fl:hover{color:var(--c-accent);}
   footer small{color:var(--c-cream-mut);font-size:.76rem;}
+
+  @media (max-width:600px){
+    header.site{padding:11px var(--gutter);}
+    .brand b{display:none;}
+    .brand img{width:32px;}
+    .back{font-size:.74rem;letter-spacing:.04em;}
+  }
 </style>
 </head>
 <body>

@@ -26,10 +26,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
 <style>
-  @font-face{font-family:"Axiforma";src:url("./fonts/Axiforma-Regular.woff2") format("woff2");font-weight:400;font-display:swap;}
-  @font-face{font-family:"Axiforma";src:url("./fonts/Axiforma-Medium.woff2") format("woff2");font-weight:500;font-display:swap;}
-  @font-face{font-family:"Axiforma";src:url("./fonts/Axiforma-Bold.woff2") format("woff2");font-weight:700;font-display:swap;}
-  @font-face{font-family:"Axiforma";src:url("./fonts/Axiforma-Black.woff2") format("woff2");font-weight:900;font-display:swap;}
+  @font-face{font-family:"Axiforma";src:url("./axiforma/Kastelov%20-%20Axiforma%20Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Axiforma";src:url("./axiforma/Kastelov%20-%20Axiforma%20Medium.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Axiforma";src:url("./axiforma/Kastelov%20-%20Axiforma%20SemiBold.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Axiforma";src:url("./axiforma/Kastelov%20-%20Axiforma%20Bold.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Axiforma";src:url("./axiforma/Kastelov%20-%20Axiforma%20ExtraBold.woff2") format("woff2");font-weight:800;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Axiforma";src:url("./axiforma/Kastelov%20-%20Axiforma%20Black.woff2") format("woff2");font-weight:900;font-style:normal;font-display:swap;}
 
   :root{
     --c-bg:#160002;--c-accent:#e50c33;--c-cream:#ffedd9;--c-deep:#3a0008;--c-black:#0a0001;
@@ -320,6 +322,13 @@
 
   /* MÓVIL: espaciado más compacto y limpio */
   @media (max-width:600px){
+    header.site{padding:11px var(--gutter);}
+    header.site.scrolled{padding-block:9px;}
+    .brand b{display:none;}                 /* fuera la palabra Quantixz */
+    .brand img{width:32px;}
+    nav.site{gap:16px;}
+    nav.site a{font-size:.72rem;letter-spacing:.06em;}
+    .nav-cta{padding:7px 13px;}
     .hero{min-height:auto;padding:96px 0 64px;}
     .about,.benefits,.services,.work{padding-block:clamp(56px,9vh,86px);}
     .contact{padding-top:clamp(70px,10vh,100px);}
