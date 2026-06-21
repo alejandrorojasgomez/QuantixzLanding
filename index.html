@@ -67,8 +67,11 @@
 
   /* DESTELLOS de luz */
   .flare{position:absolute;border-radius:50%;pointer-events:none;mix-blend-mode:screen;will-change:transform,opacity;
-    animation:flarepulse var(--fp,7s) ease-in-out infinite;animation-delay:var(--dl,0s);}
-  @keyframes flarepulse{0%,100%{opacity:0;transform:scale(.55);}50%{opacity:var(--o,.45);transform:scale(1);}}
+    animation:flarepulse var(--fp,7s) linear infinite;animation-delay:var(--dl,0s);}
+  @keyframes flarepulse{
+    0%{opacity:0;transform:scale(.6);animation-timing-function:ease-in;}
+    50%{opacity:var(--o,.45);transform:scale(1);animation-timing-function:ease-out;}
+    100%{opacity:0;transform:scale(.6);}}
 
   /* SATURNO / agujero negro ambiental: cubre casi todo el hero, ultra difuminado */
   .saturn{position:absolute;z-index:0;pointer-events:none;opacity:.03;mix-blend-mode:screen;
@@ -231,7 +234,7 @@
   .work__cta{text-align:center;margin-top:clamp(40px,5vw,60px);position:relative;z-index:2;}
 
   /* CONTACTO */
-  .contact{padding:clamp(100px,14vh,190px) 0 28px;position:relative;}
+  .contact{padding:clamp(100px,14vh,190px) 0 12px;position:relative;}
   .contact .aurora__blob{opacity:.5;}
   .contact .wrap{position:relative;z-index:2;}
   .contact .eyebrow{display:block;margin-bottom:34px;}
@@ -590,11 +593,8 @@
     const rnd=(a,b)=>a+Math.random()*(b-a);
     const pm=()=>Math.random()<.5?-1:1;
     // Posición en los bordes/márgenes, para no taparse con textos ni recuadros
-    const edgePos=()=>{const e=Math.floor(Math.random()*4);
-      if(e===0) return {l:rnd(1,11),t:rnd(4,94)};   // izquierda
-      if(e===1) return {l:rnd(89,99),t:rnd(4,94)};  // derecha
-      if(e===2) return {l:rnd(5,95),t:rnd(1,9)};    // arriba
-      return {l:rnd(5,95),t:rnd(91,99)};            // abajo
+    const edgePos=()=>{const right=Math.random()<.5;
+      return {l:right?rnd(94,99.5):rnd(0.5,6),t:rnd(3,97)};  // solo márgenes laterales
     };
     document.querySelectorAll("section").forEach((sec,si)=>{
       const layer=document.createElement("div");
@@ -624,7 +624,7 @@
         html+='<span class="flare" style="left:'+p.l.toFixed(2)+'%;top:'+p.t.toFixed(2)+'%;'+
           'width:'+sz.toFixed(0)+'px;height:'+sz.toFixed(0)+'px;'+
           'background:radial-gradient(circle,'+col+'.6) 0%,'+col+'0) 68%);'+
-          '--o:'+rnd(0.18,0.4).toFixed(3)+';--fp:'+rnd(6,11).toFixed(2)+'s;--dl:'+rnd(0,7).toFixed(2)+'s;"></span>';
+          '--o:'+rnd(0.09,0.20).toFixed(3)+';--fp:'+rnd(6,11).toFixed(2)+'s;--dl:'+rnd(0,7).toFixed(2)+'s;"></span>';
       }
       layer.innerHTML=html;
       sec.insertBefore(layer,sec.firstChild);
