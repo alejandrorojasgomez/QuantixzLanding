@@ -1,0 +1,8 @@
+# robots.txt — Quantixz
+# Permite el rastreo completo del sitio por buscadores y motores de IA.
+
+User-agent: *
+Allow: /
+
+# [REEMPLAZAR-CON-DOMINIO-REAL] por tu dominio final (con https y sin barra final extra)
+Sitemap: https://[REEMPLAZAR-CON-DOMINIO-REAL]/sitemap.xml

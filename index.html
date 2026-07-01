@@ -1,23 +1,44 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-CO">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Quantixz — Alejandro Rojas Gómez | Branding & Identidad Visual</title>
-<meta name="description" content="Quantixz, estudio de branding e identidad visual. Creamos marcas claras, coherentes y brutalmente tuyas. Planes personalizados, +100 clientes internacionales." />
+
+<!-- ===================== SEO PRINCIPAL ===================== -->
+<title>Quantixz | Branding e Identidad Visual en Cali, Colombia</title>
+<meta name="description" content="Estudio de branding e identidad visual en Cali, Colombia. Diseñamos logos y marcas memorables para clientes locales e internacionales. ¡Hablemos!" />
+<meta name="robots" content="index, follow" />
+<!-- [REEMPLAZAR CON DOMINIO REAL] en canonical, og:url, og:image y twitter:image -->
+<link rel="canonical" href="https://[REEMPLAZAR-CON-DOMINIO-REAL]/" />
+
+<!-- ===================== OPEN GRAPH (Facebook, WhatsApp, LinkedIn) ===================== -->
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="es_CO" />
+<meta property="og:site_name" content="Quantixz" />
+<meta property="og:title" content="Quantixz | Branding e Identidad Visual en Cali, Colombia" />
+<meta property="og:description" content="Estudio de branding e identidad visual en Cali, Colombia. Diseñamos logos y marcas memorables para clientes locales e internacionales." />
+<meta property="og:url" content="https://[REEMPLAZAR-CON-DOMINIO-REAL]/" />
+<!-- og:image debe ser 1200x630px (JPG/PNG). Sube la imagen a ./assets/og-image.jpg -->
+<meta property="og:image" content="https://[REEMPLAZAR-CON-DOMINIO-REAL]/assets/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Quantixz — Estudio de branding e identidad visual en Cali, Colombia" />
+
+<!-- ===================== TWITTER CARD ===================== -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Quantixz | Branding e Identidad Visual en Cali, Colombia" />
+<meta name="twitter:description" content="Estudio de branding e identidad visual en Cali, Colombia. Diseñamos logos y marcas memorables para clientes locales e internacionales." />
+<meta name="twitter:image" content="https://[REEMPLAZAR-CON-DOMINIO-REAL]/assets/og-image.jpg" />
 
 <!--
   ============================================================================
-  RECURSOS QUE DEBES SUBIR TÚ (Alejandro) A ESTA CARPETA:
-  1. FUENTE AXIFORMA (toda la web la usa). Sube a ./fonts/:
-       Axiforma-Regular.woff2  (400)
-       Axiforma-Medium.woff2   (500)
-       Axiforma-Bold.woff2     (700)
-       Axiforma-Black.woff2    (900)
-     Mientras no estén, cae a Archivo (NO Inter) automáticamente.
-  2. FOTO DE PERFIL (opcional): ./assets/alejandro.jpg  (ver [FOTO PERFIL]).
-  3. LOGOS: ya están aquí (blanco.svg / negro.svg / rojo.svg).
-  PENDIENTE: URL real de LinkedIn ([PENDIENTE]).
+  RECURSOS / PENDIENTES:
+  1. FUENTE AXIFORMA: ya cargada desde ./axiforma/ (.woff2). OK.
+  2. IMAGEN PARA REDES: sube ./assets/og-image.jpg en 1200x630px (para og:image / twitter:image).
+  3. FOTO DE PERFIL (opcional): ./assets/alejandro.jpg  (ver [FOTO PERFIL]).
+  4. LOGOS: ya están aquí (blanco.svg / negro.svg / rojo.svg).
+  5. DOMINIO: reemplaza todos los "[REEMPLAZAR-CON-DOMINIO-REAL]" por tu dominio final
+     (en este <head>, en robots.txt y en sitemap.xml).
   ============================================================================
 -->
 
@@ -35,7 +56,7 @@
 
   :root{
     --c-bg:#160002;--c-accent:#e50c33;--c-cream:#ffedd9;--c-deep:#3a0008;--c-black:#0a0001;
-    --c-cream-dim:#ffedd9b3;--c-cream-mut:#ffedd966;--c-line:#ffedd91a;--c-line-2:#ffedd90d;
+    --c-cream-dim:#ffedd9b3;--c-cream-mut:#ffedd999;--c-line:#ffedd91a;--c-line-2:#ffedd90d;
     --font-display:"Axiforma","Archivo",system-ui,sans-serif;
     --font-body:"Axiforma","Archivo",system-ui,sans-serif;
     --maxw:1360px;--gutter:clamp(24px,4vw,68px);--ease:cubic-bezier(.2,.7,.2,1);
@@ -46,6 +67,14 @@
   a{color:inherit;text-decoration:none;}
   img,svg{display:block;max-width:100%;}
   ::selection{background:var(--c-accent);color:var(--c-cream);}
+
+  /* FOCO ACCESIBLE: anillo consistente para teclado en todo lo interactivo */
+  :focus-visible{outline:2px solid var(--c-accent);outline-offset:3px;border-radius:2px;}
+  /* Las tarjetas con foco propio (inset) ya lo definen más abajo y ganan por especificidad */
+
+  /* Craft tipográfico: líneas parejas en títulos, sin huérfanas en párrafos */
+  h1,h2,h3,.display{text-wrap:balance;}
+  p{text-wrap:pretty;}
   .wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gutter);}
 
   /* Radio sutil (2px) en todos los recuadros */
@@ -127,8 +156,11 @@
 
   /* BOTONES */
   .btn{display:inline-flex;align-items:center;gap:11px;font-size:.9rem;letter-spacing:.02em;font-weight:600;padding:15px 28px;border:1px solid var(--c-accent);font-family:var(--font-display);transition:transform .3s var(--ease),background .3s,box-shadow .3s;cursor:pointer;}
-  .btn--primary{background:var(--c-accent);color:var(--c-cream);}
+  .btn--primary{background:var(--c-accent);color:var(--c-cream);position:relative;overflow:hidden;}
   .btn--primary:hover{transform:translateY(-3px);box-shadow:0 14px 30px -10px rgba(229,12,51,.6);}
+  /* Barrido de luz al pasar el cursor (se desactiva con reduced-motion vía regla global) */
+  .btn--primary::after{content:"";position:absolute;top:0;left:-140%;width:55%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,237,217,.38),transparent);transform:skewX(-18deg);transition:left .6s var(--ease);pointer-events:none;}
+  .btn--primary:hover::after{left:150%;}
   .btn--ghost{background:transparent;color:var(--c-cream);border-color:var(--c-line);}
   .btn--ghost:hover{border-color:var(--c-accent);transform:translateY(-3px);}
   .btn .arrow{transition:transform .3s var(--ease);}
@@ -138,7 +170,7 @@
   section{position:relative;}
   .section-head{display:grid;grid-template-columns:auto 1fr;gap:8px 22px;align-items:baseline;margin-bottom:clamp(44px,6vw,72px);}
   .section-head .num{font-family:var(--font-display);font-weight:700;color:var(--c-accent);font-size:.95rem;letter-spacing:.12em;}
-  .section-head h2{font-size:clamp(2.1rem,5.5vw,4.4rem);}
+  .section-head h2{font-size:clamp(2.1rem,5.5vw,4.4rem);line-height:1.1;}
   .section-head .lead{grid-column:2;color:var(--c-cream-dim);max-width:60ch;font-size:1.08rem;}
 
   /* ¿POR QUÉ QUANTIXZ? */
@@ -230,6 +262,46 @@
   .card:focus-visible{outline:2px solid var(--c-accent);outline-offset:-2px;}
   .work__cta{text-align:center;margin-top:clamp(40px,5vw,60px);position:relative;z-index:2;}
 
+  /* PROYECTOS WEB (mockups de navegador) */
+  .webwork{padding:clamp(90px,12vh,170px) 0;position:relative;}
+  .webwork .aurora__blob{opacity:.32;}
+  .webgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(22px,2.6vw,40px);position:relative;z-index:2;}
+  @media (max-width:1040px){.webgrid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:680px){.webgrid{grid-template-columns:1fr;}}
+  .wcard{position:relative;display:flex;flex-direction:column;background:var(--c-black);border:1px solid var(--c-line);border-radius:10px;overflow:hidden;transition:transform .5s var(--ease),border-color .4s,box-shadow .5s;}
+  .wcard:hover{transform:translateY(-8px);border-color:var(--c-accent);box-shadow:0 30px 60px -24px rgba(229,12,51,.55);}
+  .wcard:focus-visible{outline:2px solid var(--c-accent);outline-offset:3px;}
+  /* barra del navegador */
+  .wbar{display:flex;align-items:center;gap:10px;padding:11px 14px;background:linear-gradient(180deg,#1c0306,#140205);border-bottom:1px solid var(--c-line);}
+  .wbar .wdots{display:flex;gap:6px;flex-shrink:0;}
+  .wbar .wdots i{width:11px;height:11px;border-radius:50%;background:var(--c-cream-mut);display:block;transition:background .4s;}
+  .wcard:hover .wbar .wdots i:nth-child(1){background:var(--c-accent);}
+  .wurl{flex:1;min-width:0;display:flex;align-items:center;gap:8px;background:rgba(255,237,217,.06);border:1px solid var(--c-line);border-radius:999px;padding:6px 12px;font-size:.74rem;color:var(--c-cream-dim);letter-spacing:.02em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-family:var(--font-body);}
+  .wurl svg{width:12px;height:12px;flex-shrink:0;color:var(--c-cream-mut);}
+  .wstatus{display:inline-flex;align-items:center;gap:6px;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--c-accent);flex-shrink:0;}
+  .wstatus .wpulse{width:7px;height:7px;border-radius:50%;background:var(--c-accent);animation:wpulse 1.8s var(--ease) infinite;}
+  @keyframes wpulse{0%{box-shadow:0 0 0 0 rgba(229,12,51,.55);}70%{box-shadow:0 0 0 8px rgba(229,12,51,0);}100%{box-shadow:0 0 0 0 rgba(229,12,51,0);}}
+  .wstatus.soon{color:var(--c-cream-mut);}
+  .wstatus.soon .wpulse{background:var(--c-cream-mut);animation:none;}
+  /* captura */
+  .wshot{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--c-black);}
+  .wshot img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform 4s var(--ease),filter .5s;filter:saturate(.96) brightness(.92);}
+  .wcard:hover .wshot img{transform:scale(1.04);filter:saturate(1.05) brightness(1);}
+  .wshot::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,0,1,.5),transparent 42%);opacity:.55;transition:opacity .4s;pointer-events:none;}
+  .wcard:hover .wshot::after{opacity:0;}
+  /* info inferior */
+  .winfo{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:clamp(18px,2vw,24px);border-top:1px solid var(--c-line);}
+  .winfo h3{font-family:var(--font-display);font-weight:900;text-transform:uppercase;letter-spacing:-.01em;font-size:clamp(1.15rem,1.8vw,1.5rem);line-height:1.05;}
+  .winfo p{color:var(--c-cream-dim);font-size:.92rem;margin-top:5px;max-width:42ch;}
+  .wgo{display:inline-flex;align-items:center;gap:8px;flex-shrink:0;font-family:var(--font-display);font-weight:700;font-size:.8rem;letter-spacing:.04em;color:var(--c-cream);border:1px solid var(--c-line);border-radius:2px;padding:10px 16px;transition:background .3s,border-color .3s,color .3s;}
+  .wcard:hover .wgo{background:var(--c-accent);border-color:var(--c-accent);}
+  .wgo .arrow{transition:transform .3s var(--ease);}
+  .wcard:hover .wgo .arrow{transform:translate(2px,-2px);}
+  /* chips de tecnología: ocultos visualmente pero presentes en el DOM (SEO + lectores de pantalla) */
+  .wchips{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+  @media (hover:none){.wcard:hover{transform:none;box-shadow:none;}.wcard:hover .wshot img{transform:none;}}
+  @media (max-width:600px){.wcard{border-radius:8px;}.winfo{flex-direction:column;align-items:flex-start;gap:14px;}.wgo{width:100%;justify-content:center;}}
+
   /* CONTACTO */
   .contact{padding:clamp(100px,14vh,190px) 0 12px;position:relative;}
   /* Separador ligero entre secciones (color uniforme) */
@@ -297,6 +369,7 @@
   .reveal[data-d="1"]{transition-delay:.08s;}.reveal[data-d="2"]{transition-delay:.16s;}
   .reveal[data-d="3"]{transition-delay:.24s;}.reveal[data-d="4"]{transition-delay:.32s;}
   .reveal[data-d="5"]{transition-delay:.40s;}.reveal[data-d="6"]{transition-delay:.48s;}
+  .reveal[data-d="7"]{transition-delay:.56s;}
   @media (max-width:600px){.reveal{filter:none;transition:opacity .7s var(--ease),transform .7s var(--ease);}}
 
   /* BOTONES FLOTANTES */
@@ -357,6 +430,45 @@
     *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important;}
   }
 </style>
+
+<!-- ===================== DATOS ESTRUCTURADOS (Schema.org / JSON-LD) ===================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Quantixz",
+  "alternateName": "Quantixz Studio",
+  "description": "Estudio de branding e identidad visual en Cali, Colombia. Diseño de logos, manuales de marca, packaging y diseño web para clientes locales e internacionales.",
+  "url": "https://[REEMPLAZAR-CON-DOMINIO-REAL]/",
+  "image": "https://[REEMPLAZAR-CON-DOMINIO-REAL]/assets/og-image.jpg",
+  "logo": "https://[REEMPLAZAR-CON-DOMINIO-REAL]/blanco.svg",
+  "telephone": "+57 315 6057195",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Cali",
+    "addressRegion": "Valle del Cauca",
+    "addressCountry": "CO"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Cali" },
+    { "@type": "Country", "name": "Colombia" },
+    { "@type": "Place", "name": "Internacional (trabajo remoto)" }
+  ],
+  "founder": { "@type": "Person", "name": "Alejandro Rojas Gómez" },
+  "employee": { "@type": "Person", "name": "Alejandro Rojas Gómez" },
+  "knowsAbout": [
+    "Branding", "Identidad visual", "Diseño de logo", "Manual de marca",
+    "Packaging", "Diseño web", "Diseño para redes sociales", "Diseño e-sport"
+  ],
+  "sameAs": [
+    "https://instagram.com/quantixzstudio",
+    "https://www.linkedin.com/in/alejandro-rojas-gomez-7614612b0/",
+    "https://www.behance.net/"
+  ]
+}
+</script>
+
 </head>
 <body>
 
@@ -364,7 +476,7 @@
 
 <!-- HEADER -->
 <header class="site" id="siteHeader">
-  <a class="brand" href="#top" aria-label="Quantixz, inicio"><img src="./blanco.svg" alt="Logo Quantixz" /><b>Quantixz</b></a>
+  <a class="brand" href="#top" aria-label="Quantixz, inicio"><img src="./blanco.svg" alt="Logo de Quantixz, estudio de branding en Cali, Colombia" /><b>Quantixz</b></a>
   <nav class="site">
     <a href="#top">Inicio</a>
     <a href="./faq.html">FAQ</a>
@@ -378,6 +490,7 @@
   <a href="#about" data-target="about"><span class="lbl">¿Por qué?</span><span class="dot"></span></a>
   <a href="#benefits" data-target="benefits"><span class="lbl">Beneficios</span><span class="dot"></span></a>
   <a href="#services" data-target="services"><span class="lbl">Servicios</span><span class="dot"></span></a>
+  <a href="#webwork" data-target="webwork"><span class="lbl">Web</span><span class="dot"></span></a>
   <a href="#work" data-target="work"><span class="lbl">Proyectos</span><span class="dot"></span></a>
   <a href="#contact" data-target="contact"><span class="lbl">Hablemos</span><span class="dot"></span></a>
 </nav>
@@ -387,7 +500,7 @@
   <img class="saturn" src="./saturno.jpg" alt="" aria-hidden="true" draggable="false" />
   <div class="aurora" data-parallax="0.16"><div class="aurora__blob blob-a"></div><div class="aurora__blob blob-b"></div></div>
   <div class="wrap">
-    <span class="eyebrow reveal">Estudio de branding · Identidad visual</span>
+    <span class="eyebrow reveal">Estudio de branding &amp; identidad visual en Cali, Colombia</span>
     <h1 class="display">
       <span class="line reveal" data-d="1"><span>Creamos marcas</span></span>
       <span class="line reveal" data-d="2"><span class="accent">memorables</span></span>
@@ -413,7 +526,7 @@
         <!-- [FOTO PERFIL] sube ./assets/alejandro.jpg y descomenta:
         <img src="./assets/alejandro.jpg" alt="Alejandro Rojas Gómez" style="margin-bottom:32px;filter:saturate(.9) contrast(1.05);" /> -->
         <p class="about__lead">Las marcas que se sienten cercanas <em>no nacen por accidente</em>. Detr&aacute;s de cada pieza hay intenci&oacute;n, estrategia y claridad.</p>
-        <p class="about__body">6 a&ntilde;os dise&ntilde;ando identidades visuales para m&aacute;s de 100 clientes internacionales. Trabajamos el branding como un sistema: del logo al lenguaje completo, listo para escalar.</p>
+        <p class="about__body">Desde Cali, Colombia, llevamos 6 a&ntilde;os dise&ntilde;ando identidades visuales para m&aacute;s de 100 clientes locales e internacionales. Trabajamos el branding como un sistema: del logo al lenguaje completo, listo para escalar.</p>
         <div class="about__stats">
           <div class="stat"><b>6</b><span>A&ntilde;os de experiencia</span></div>
           <div class="stat"><b>+100</b><span>Clientes internacionales</span></div>
@@ -442,7 +555,7 @@
   <div class="wrap">
     <div class="section-head reveal reveal--left">
       <span class="num">02</span>
-      <h2 class="display">Beneficios</h2>
+      <h2 class="display">Beneficios de trabajar con Quantixz</h2>
       <p class="lead">Trabajar con nosotros es invertir en una marca con luz propia, sin agotar tus recursos.</p>
     </div>
     <div class="bgrid">
@@ -463,13 +576,22 @@
   <div class="wrap">
     <div class="section-head reveal reveal--left">
       <span class="num">03</span>
-      <h2 class="display">Servicios</h2>
+      <h2 class="display">Servicios de Branding y Dise&ntilde;o de Identidad Visual</h2>
     </div>
     <div class="services__intro">
       <p class="big reveal">Cada presupuesto se arma <em>a tu medida</em>. No vendemos paquetes r&iacute;gidos, dise&ntilde;amos la soluci&oacute;n que tu marca necesita.</p>
       <p class="reveal" data-d="1">No importa el tama&ntilde;o de tu negocio: con planes personalizados y estrat&eacute;gicos te ayudamos a construir una marca que brille con luz propia.</p>
     </div>
-    <div class="slist" id="serviceList"></div>
+    <!-- Servicios en HTML estático (indexable por buscadores y motores de IA). El JS solo aplica las animaciones reveal. -->
+    <div class="slist" id="serviceList">
+      <div class="srow reveal" data-d="1"><span class="sn">01</span><span class="st">Diseño de Identidad Visual</span><span class="sitems"><span class="schip">Logo</span><span class="schip">Patrones de Marca</span><span class="schip">Manual de Marca</span><span class="schip">Tipografía</span><span class="schip">Paleta Cromática</span></span><span class="sarrow">&#8599;</span></div>
+      <div class="srow reveal" data-d="2"><span class="sn">02</span><span class="st">Diseño Corporativo</span><span class="sitems"><span class="schip">Tarjetas de Presentación</span><span class="schip">Papelería</span><span class="schip">Brochures y Flyers</span><span class="schip">Mockups</span></span><span class="sarrow">&#8599;</span></div>
+      <div class="srow reveal" data-d="3"><span class="sn">03</span><span class="st">Diseño E-Sport</span><span class="sitems"><span class="schip">Logo</span><span class="schip">Manual de Marca</span><span class="schip">Jersey</span><span class="schip">Hoodie</span><span class="schip">Gorra</span><span class="schip">Controles de Consolas</span><span class="schip">Mousepad</span><span class="schip">Paquete para Streamers</span><span class="schip">Redes</span></span><span class="sarrow">&#8599;</span></div>
+      <div class="srow reveal" data-d="4"><span class="sn">04</span><span class="st">Packaging</span><span class="sitems"><span class="schip">Cajas</span><span class="schip">Menús</span><span class="schip">Etiquetas</span><span class="schip">Envolturas</span><span class="schip">Calcomanías</span></span><span class="sarrow">&#8599;</span></div>
+      <div class="srow reveal" data-d="5"><span class="sn">05</span><span class="st">Diseño Web</span><span class="sitems"><span class="schip">Tiendas Online</span><span class="schip">Emprendimientos</span><span class="schip">Landing Pages</span></span><span class="sarrow">&#8599;</span></div>
+      <div class="srow reveal" data-d="6"><span class="sn">06</span><span class="st">Sesiones Fotográficas</span><span class="sitems"><span class="schip">Foto Producto</span><span class="schip">Sesión de Fotos</span><span class="schip">Fotos de Estudio</span></span><span class="sarrow">&#8599;</span></div>
+      <div class="srow reveal" data-d="7"><span class="sn">07</span><span class="st">Creación de Contenido para Redes</span><span class="sitems"><span class="schip">Posts</span><span class="schip">Historias</span><span class="schip">Banners y Portadas</span><span class="schip">Manejo de Cuenta de Instagram</span><span class="schip">Optimización de Perfil</span><span class="schip">Campaña Publicitaria</span></span><span class="sarrow">&#8599;</span></div>
+    </div>
     <div class="services__foot reveal">
       <p class="note"><span class="tag">100% personalizado</span> Cu&eacute;ntanos qu&eacute; necesitas y armamos un presupuesto a tu medida.</p>
       <a class="btn btn--primary" href="#contact">&iquest;Interesado? <span class="arrow">&rarr;</span></a>
@@ -477,7 +599,79 @@
   </div>
 </section>
 
-<!-- PROYECTOS (04) -->
+<!-- PROYECTOS WEB (04) -->
+<section class="webwork" id="webwork">
+  <div class="aurora" data-parallax="0.09" aria-hidden="true">
+    <div class="aurora__blob blob-a" style="top:6%;left:-4%;right:auto;bottom:auto;opacity:.2;"></div>
+    <div class="aurora__blob blob-b" style="top:auto;bottom:2%;right:-2%;opacity:.18;"></div>
+  </div>
+  <div class="wrap">
+    <div class="section-head reveal reveal--left">
+      <span class="num">04</span>
+      <h2 class="display">Dise&ntilde;o y Desarrollo Web</h2>
+      <p class="lead">No dise&ntilde;amos p&aacute;ginas, construimos experiencias: r&aacute;pidas, hechas a tu medida y pensadas para convertir visitantes en clientes.</p>
+    </div>
+    <div class="webgrid">
+
+      <!-- WEB 1: YüGO+ (en vivo) -->
+      <a class="wcard reveal" data-d="1" href="https://yu-go.vercel.app" target="_blank" rel="noopener" aria-label="Visitar el sitio web de YüGO+, abre en una pestaña nueva">
+        <div class="wbar">
+          <span class="wdots"><i></i><i></i><i></i></span>
+          <span class="wurl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>yu-go.vercel.app</span>
+        </div>
+        <div class="wshot"><img loading="lazy" src="./web1.webp" alt="Sitio web YüGO+, landing page de yogur artesanal diseñada y desarrollada por Quantixz" /></div>
+        <div class="winfo">
+          <div>
+            <h3>Y&uuml;GO+</h3>
+            <p>Landing de yogur artesanal: identidad de marca + desarrollo web.</p>
+          </div>
+          <span class="wgo">Visitar <span class="arrow">&#8599;</span></span>
+        </div>
+        <div class="wchips"><span>Landing page</span><span>Branding</span><span>Responsive</span></div>
+      </a>
+
+      <!-- WEB 2: VANTA (en vivo) -->
+      <a class="wcard reveal" data-d="2" href="https://vanta-droning.vercel.app" target="_blank" rel="noopener" aria-label="Visitar el sitio web de VANTA, abre en una pestaña nueva">
+        <div class="wbar">
+          <span class="wdots"><i></i><i></i><i></i></span>
+          <span class="wurl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>vanta-droning.vercel.app</span>
+        </div>
+        <div class="wshot"><img loading="lazy" src="./web3.webp" alt="Sitio web VANTA, landing de drones de seguridad con inteligencia artificial diseñada y desarrollada por Quantixz" /></div>
+        <div class="winfo">
+          <div>
+            <h3>VANTA</h3>
+            <p>Landing de drones de seguridad con IA: identidad de marca + desarrollo web.</p>
+          </div>
+          <span class="wgo">Visitar <span class="arrow">&#8599;</span></span>
+        </div>
+        <div class="wchips"><span>Landing page</span><span>Branding</span><span>Responsive</span></div>
+      </a>
+
+      <!-- WEB 3: Delicias & Vinos (sin URL aún).
+           [PENDIENTE URL WEB2]: cuando el sitio esté live, reemplaza este <div class="wcard ...">...</div>
+           por un enlace: <a class="wcard reveal" data-d="2" href="URL_REAL" target="_blank" rel="noopener" aria-label="Visitar el sitio web de Delicias & Vinos, abre en una pestaña nueva"> ... </a>,
+           cambia "tusitio.com" por el dominio real y cambia el botón "Muy pronto" por: Visitar <span class="arrow">&#8599;</span> -->
+      <a class="wcard reveal" data-d="3" href="https://vinos-landing-muestra.vercel.app" target="_blank" rel="noopener" aria-label="Visitar el sitio web de Delicias & Vinos, abre en una pestaña nueva">
+        <div class="wbar">
+          <span class="wdots"><i></i><i></i><i></i></span>
+          <span class="wurl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>vinos-landing-muestra.vercel.app</span>
+        </div>
+        <div class="wshot"><img loading="lazy" src="./web2.webp" alt="Sitio web Delicias & Vinos, e-commerce de vinos, quesos, carnes y gourmet diseñado por Quantixz" /></div>
+        <div class="winfo">
+          <div>
+            <h3>Delicias &amp; Vinos</h3>
+            <p>E-commerce de vinos, quesos, carnes y gourmet: cuatro mundos, una sola mesa.</p>
+          </div>
+          <span class="wgo">Visitar <span class="arrow">&#8599;</span></span>
+        </div>
+        <div class="wchips"><span>E-commerce</span><span>Cat&aacute;logo</span><span>Dise&ntilde;o web</span></div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROYECTOS (05) -->
 <section class="work" id="work">
   <div class="aurora" data-parallax="0.10" aria-hidden="true">
     <div class="aurora__blob blob-b" style="top:10%;right:-2%;bottom:auto;"></div>
@@ -485,8 +679,8 @@
   </div>
   <div class="wrap">
     <div class="section-head reveal reveal--left">
-      <span class="num">04</span>
-      <h2 class="display">Proyectos</h2>
+      <span class="num">05</span>
+      <h2 class="display">Portafolio de Branding y Dise&ntilde;o Gr&aacute;fico</h2>
       <p class="lead">Identidades, empaques, contenido y dise&ntilde;o que conecta. Una selecci&oacute;n del trabajo en Behance.</p>
     </div>
     <div class="work__stage">
@@ -503,7 +697,7 @@
   <div class="wrap">
     <span class="eyebrow reveal">&iquest;Construimos tu marca?</span>
     <h2 class="display reveal">Hablemos<span class="accent">.</span></h2>
-    <p class="contact__sub reveal" data-d="1">&iquest;Est&aacute;s listo para contar tu historia como realmente se merece? Escr&iacute;benos y empecemos.</p>
+    <p class="contact__sub reveal" data-d="1">&iquest;Est&aacute;s listo para contar tu historia como realmente se merece? Escr&iacute;benos y empecemos. Trabajamos con marcas en Cali, Colombia y con clientes internacionales de forma remota.</p>
 
     <form class="cform reveal" action="https://api.web3forms.com/submit" method="POST" id="contactForm">
       <input type="hidden" name="access_key" value="45dcf393-fa2d-4f63-a72a-01a0e1ee9e70">
@@ -556,12 +750,12 @@
 <!-- FOOTER (banda full-bleed con degradado, sin corte) -->
 <footer class="site-footer">
   <div class="wrap footer-bar">
-    <a class="brand" href="#top" aria-label="Quantixz, inicio"><img src="./blanco.svg" alt="Logo Quantixz" /><b>Quantixz</b></a>
+    <a class="brand" href="#top" aria-label="Quantixz, inicio"><img src="./blanco.svg" alt="Logo de Quantixz, estudio de branding en Cali, Colombia" /><b>Quantixz</b></a>
     <nav class="footer-links">
       <a href="./faq.html">FAQ</a>
       <a href="./terminos-y-condiciones.html">T&eacute;rminos y condiciones</a>
     </nav>
-    <small>&copy; <span id="year"></span> Quantixz · Alejandro Rojas G&oacute;mez</small>
+    <small>&copy; <span id="year"></span> Quantixz · Estudio de branding e identidad visual en Cali, Colombia · Alejandro Rojas G&oacute;mez</small>
   </div>
 </footer>
 
@@ -585,18 +779,18 @@
 
   /* PROYECTOS */
   const PROJECTS=[
-    {title:"Logo design | Parcel Express",img:"https://mir-s3-cdn-cf.behance.net/projects/404/30101a228881059.Y3JvcCwxMzgwLDEwODAsMjcwLDA.png",link:"https://www.behance.net/gallery/228881059/Logo-design-Parcel-Express"},
-    {title:"Logo design & Visual Identity | FisioX",img:"https://mir-s3-cdn-cf.behance.net/projects/404/4bc225228794265.Y3JvcCwxMjg3LDEwMDYsMzE1LDM1.png",link:"https://www.behance.net/gallery/228794265/Logo-design-Visual-Identity-FisioX"},
-    {title:"Taco Will | Mexican restaurant branding",img:"https://mir-s3-cdn-cf.behance.net/projects/404/cfc671203202027.Y3JvcCwzNTAwLDI3MzcsMCwzODE.png",link:"https://www.behance.net/gallery/203202027/Taco-Will-Mexican-restaurant-branding"},
-    {title:"Social media collection. V1",img:"https://mir-s3-cdn-cf.behance.net/projects/404/f54dc5203184683.Y3JvcCwxMzE0LDEwMjcsMCwz.png",link:"https://www.behance.net/gallery/203184683/Social-media-collection-V1"},
-    {title:"Veggie Botanitas | Branding project",img:"https://mir-s3-cdn-cf.behance.net/projects/404/b5c5cb198983447.Y3JvcCwxNzI1LDEzNDksOTMsMTAyMDA.png",link:"https://www.behance.net/gallery/198983447/Veggie-Botanitas-Branding-project"},
-    {title:"Di Trattoria | Web Design Practice",img:"https://mir-s3-cdn-cf.behance.net/projects/404/d578d1191187585.Y3JvcCw1NzcsNDUxLDEyNTIsNTc4.png",link:"https://www.behance.net/gallery/191187585/Di-Trattoria-Web-Design-Practice"},
-    {title:"Logo design | Bet & Invest Brand Snabba",img:"https://mir-s3-cdn-cf.behance.net/projects/404/be29aa167653455.Y3JvcCwzMTA2LDI0MjksOTQ1LDY2MQ.png",link:"https://www.behance.net/gallery/167653455/Logo-design-Bet-Invest-Brand-Snabba"},
-    {title:"Lawyer Logo design | Rever",img:"https://mir-s3-cdn-cf.behance.net/projects/404/06e5d9190504089.Y3JvcCw5MDEsNzA1LDEwMDgsMA.png",link:"https://www.behance.net/gallery/190504089/Lawyer-Logo-design-Rever"},
-    {title:"Marketing Agency Logo design | Vendemas",img:"https://mir-s3-cdn-cf.behance.net/projects/404/b2912b190254269.Y3JvcCwxMzE0LDEwMjcsMCwz.png",link:"https://www.behance.net/gallery/190254269/Marketing-Agency-Logo-design-Vendemas"},
-    {title:"Logo design | Pheno Poppin",img:"https://mir-s3-cdn-cf.behance.net/projects/404/29c011163785063.Y3JvcCwxMzE0LDEwMjcsMCwz.png",link:"https://www.behance.net/gallery/163785063/Logo-design-Pheno-Poppin"},
-    {title:"E-Sport Logo & Visual Identity | Fortsaken",img:"https://mir-s3-cdn-cf.behance.net/projects/404/d25c57152370567.Y3JvcCwxMzE0LDEwMjcsMCwz.png",link:"https://www.behance.net/gallery/152370567/E-Sport-Logo-Visual-Identity-Fortsaken"},
-    {title:"Logo and packaging design | FitU",img:"https://mir-s3-cdn-cf.behance.net/projects/404/75a3a5154432537.Y3JvcCw4MDgsNjMyLDAsMA.png",link:"https://www.behance.net/gallery/154432537/Logo-and-packaging-design-FitU"}
+    {title:"Logo design | Parcel Express",alt:"Diseño de logo e identidad visual para Parcel Express, marca de logística y envíos",img:"https://mir-s3-cdn-cf.behance.net/projects/404/30101a228881059.Y3JvcCwxMzgwLDEwODAsMjcwLDA.png",link:"https://www.behance.net/gallery/228881059/Logo-design-Parcel-Express"},
+    {title:"Logo design & Visual Identity | FisioX",alt:"Diseño de logo e identidad visual para FisioX, marca de fisioterapia y salud",img:"https://mir-s3-cdn-cf.behance.net/projects/404/4bc225228794265.Y3JvcCwxMjg3LDEwMDYsMzE1LDM1.png",link:"https://www.behance.net/gallery/228794265/Logo-design-Visual-Identity-FisioX"},
+    {title:"Taco Will | Mexican restaurant branding",alt:"Branding e identidad visual para Taco Will, restaurante de comida mexicana",img:"https://mir-s3-cdn-cf.behance.net/projects/404/cfc671203202027.Y3JvcCwzNTAwLDI3MzcsMCwzODE.png",link:"https://www.behance.net/gallery/203202027/Taco-Will-Mexican-restaurant-branding"},
+    {title:"Social media collection. V1",alt:"Colección de diseño de contenido para redes sociales y piezas para Instagram",img:"https://mir-s3-cdn-cf.behance.net/projects/404/f54dc5203184683.Y3JvcCwxMzE0LDEwMjcsMCwz.png",link:"https://www.behance.net/gallery/203184683/Social-media-collection-V1"},
+    {title:"Veggie Botanitas | Branding project",alt:"Proyecto de branding para Veggie Botanitas, marca de snacks y botanas vegetales",img:"https://mir-s3-cdn-cf.behance.net/projects/404/b5c5cb198983447.Y3JvcCwxNzI1LDEzNDksOTMsMTAyMDA.png",link:"https://www.behance.net/gallery/198983447/Veggie-Botanitas-Branding-project"},
+    {title:"Di Trattoria | Web Design Practice",alt:"Diseño web para Di Trattoria, restaurante italiano",img:"https://mir-s3-cdn-cf.behance.net/projects/404/d578d1191187585.Y3JvcCw1NzcsNDUxLDEyNTIsNTc4.png",link:"https://www.behance.net/gallery/191187585/Di-Trattoria-Web-Design-Practice"},
+    {title:"Logo design | Bet & Invest Brand Snabba",alt:"Diseño de logo para Snabba, marca de apuestas e inversión",img:"https://mir-s3-cdn-cf.behance.net/projects/404/be29aa167653455.Y3JvcCwzMTA2LDI0MjksOTQ1LDY2MQ.png",link:"https://www.behance.net/gallery/167653455/Logo-design-Bet-Invest-Brand-Snabba"},
+    {title:"Lawyer Logo design | Rever",alt:"Diseño de logo para Rever, marca de servicios legales y abogados",img:"https://mir-s3-cdn-cf.behance.net/projects/404/06e5d9190504089.Y3JvcCw5MDEsNzA1LDEwMDgsMA.png",link:"https://www.behance.net/gallery/190504089/Lawyer-Logo-design-Rever"},
+    {title:"Marketing Agency Logo design | Vendemas",alt:"Diseño de logo para Vendemas, agencia de marketing",img:"https://mir-s3-cdn-cf.behance.net/projects/404/b2912b190254269.Y3JvcCwxMzE0LDEwMjcsMCwz.png",link:"https://www.behance.net/gallery/190254269/Marketing-Agency-Logo-design-Vendemas"},
+    {title:"Logo design | Pheno Poppin",alt:"Diseño de logo para Pheno Poppin",img:"https://mir-s3-cdn-cf.behance.net/projects/404/29c011163785063.Y3JvcCwxMzE0LDEwMjcsMCwz.png",link:"https://www.behance.net/gallery/163785063/Logo-design-Pheno-Poppin"},
+    {title:"E-Sport Logo & Visual Identity | Fortsaken",alt:"Diseño de logo e identidad visual para Fortsaken, equipo de e-sports",img:"https://mir-s3-cdn-cf.behance.net/projects/404/d25c57152370567.Y3JvcCwxMzE0LDEwMjcsMCwz.png",link:"https://www.behance.net/gallery/152370567/E-Sport-Logo-Visual-Identity-Fortsaken"},
+    {title:"Logo and packaging design | FitU",alt:"Diseño de logo y packaging para FitU, marca fitness",img:"https://mir-s3-cdn-cf.behance.net/projects/404/75a3a5154432537.Y3JvcCw4MDgsNjMyLDAsMA.png",link:"https://www.behance.net/gallery/154432537/Logo-and-packaging-design-FitU"}
   ];
   (function(){
     const grid=document.getElementById("projectGrid");
@@ -605,36 +799,15 @@
       const a=document.createElement("a");
       a.className="card reveal reveal--scale";a.href=p.link;a.target="_blank";a.rel="noopener";
       a.dataset.d=String((i%cols)+1);  // cascada por columna
-      a.setAttribute("aria-label",p.title+", ver en Behance");
-      a.innerHTML='<img loading="lazy" referrerpolicy="no-referrer" src="'+p.img+'" alt="'+p.title.replace(/"/g,"&quot;")+'" />'+
+      a.setAttribute("aria-label",(p.alt||p.title)+" — ver en Behance");
+      a.innerHTML='<img loading="lazy" referrerpolicy="no-referrer" src="'+p.img+'" alt="'+(p.alt||p.title).replace(/"/g,"&quot;")+'" />'+
         '<div class="card__overlay"><span class="card__title">'+p.title+'</span><span class="card__go">Ver proyecto &#8599;</span></div>';
       grid.appendChild(a);
     });
     initReveal(grid.querySelectorAll(".reveal"));
   })();
 
-  /* SERVICIOS */
-  const SERVICES=[
-    {t:"Diseño de Identidad Visual",items:["Logo","Patrones de Marca","Manual de Marca","Tipografía","Paleta Cromática"]},
-    {t:"Diseño Corporativo",items:["Tarjetas de Presentación","Papelería","Brochures y Flyers","Mockups"]},
-    {t:"Diseño E-Sport",items:["Logo","Manual de Marca","Jersey","Hoodie","Gorra","Controles de Consolas","Mousepad","Paquete para Streamers","Redes"]},
-    {t:"Packaging",items:["Cajas","Menús","Etiquetas","Envolturas","Calcomanías"]},
-    {t:"Diseño Web",items:["Tiendas Online","Emprendimientos","Landing Pages"]},
-    {t:"Sesiones Fotográficas",items:["Foto Producto","Sesión de Fotos","Fotos de Estudio"]},
-    {t:"Creación de Contenido para Redes",items:["Posts","Historias","Banners y Portadas","Manejo de Cuenta de Instagram","Optimización de Perfil","Campaña Publicitaria"]}
-  ];
-  (function(){
-    const list=document.getElementById("serviceList");
-    SERVICES.forEach((s,i)=>{
-      const row=document.createElement("div");
-      row.className="srow reveal";row.dataset.d=String(Math.min(i+1,6));
-      const chips=s.items.map(x=>'<span class="schip">'+x+'</span>').join("");
-      row.innerHTML='<span class="sn">0'+(i+1)+'</span><span class="st">'+s.t+'</span>'+
-        '<span class="sitems">'+chips+'</span><span class="sarrow">&#8599;</span>';
-      list.appendChild(row);
-    });
-    initReveal(list.querySelectorAll(".reveal"));
-  })();
+  /* SERVICIOS: ahora son HTML estático (ver sección #services). El reveal lo aplica initReveal() global más abajo. */
 
   document.getElementById("year").textContent=new Date().getFullYear();
 
@@ -695,7 +868,7 @@
   (function(){
     const links=[...document.querySelectorAll(".dotnav a")];
     const map={};links.forEach(l=>map[l.dataset.target]=l);
-    const ids=["top","about","benefits","services","work","contact"];
+    const ids=["top","about","benefits","services","webwork","work","contact"];
     const secs=ids.map(id=>document.getElementById(id)).filter(Boolean);
     const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove("active"));const a=map[e.target.id];if(a)a.classList.add("active");}});},{rootMargin:"-45% 0px -45% 0px"});
     secs.forEach(s=>io.observe(s));
@@ -734,7 +907,7 @@
   if(form){form.addEventListener("submit",async e=>{
     e.preventDefault();status.style.color="var(--c-cream-mut)";status.textContent="Enviando...";
     try{const res=await fetch(form.action,{method:"POST",body:new FormData(form),headers:{Accept:"application/json"}});const data=await res.json();
-      if(data.success){status.style.color="var(--c-accent)";status.textContent="¡Gracias! Te responderemos pronto.";form.reset();}
+      if(data.success){status.style.color="var(--c-cream)";status.textContent="¡Gracias! Te responderemos pronto.";form.reset();}
       else{status.style.color="var(--c-accent)";status.textContent=data.message||"Algo falló. Escríbenos por WhatsApp.";}
     }catch(err){status.style.color="var(--c-accent)";status.textContent="Error de conexión. Escríbenos por WhatsApp.";}
   });}
